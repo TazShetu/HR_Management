@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d9e72726-c4db-46b1-a7b4-128c721acd4e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApplicantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApplicantController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/joli.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/joli.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partial/joli/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partial/joli/navigation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/permission/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permission/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/permission/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permission/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="404">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/joli.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="73" column="38" lean-forward="true" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="blade" />
+        <option value="Blade" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>transfer</find>
+      <find>label</find>
+      <find>Leave-Application-View-From-Department</find>
+      <find>applicationViewDH</find>
+      <find>leaveEntryDH</find>
+      <find>leave.entry.dh</find>
+      <find>circulars</find>
+      <find>validateLogin</find>
+      <find>apply.submit</find>
+      <find>apply</find>
+      <find>applicant.register</find>
+      <find>Activi</find>
+      <find>account_close</find>
+      <find>HR</find>
+      <find>.login-container .login-box .login-logo</find>
+      <find>applicant</find>
+      <find>applicant.store</find>
+      <find>applicant.lo</find>
+      <find>.login-container .login-box .login-body .login-subtitle</find>
+      <find>.btn {</find>
+      <find>.user .btn {</find>
+      <find>.login-container .login-box</find>
+      <find>.login-container .login-box .login-body</find>
+      <find>#hero-area</find>
+      <find>test</find>
+      <find>logoBG</find>
+      <find>&lt;!-- START TEMPLATE --&gt;</find>
+      <find>ts-button</find>
+      <find>tables</find>
+      <find>office.setup.update</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/Http/Controllers/LeaveController.php" />
+        <option value="$PROJECT_DIR$/resources/views/bonus/setup.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
+        <option value="$PROJECT_DIR$/resources/views/includes/bubbly/footer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/notice/applyFormNoAuth.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/notice/viewNoAuth.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/notice/showNoAuth.blade.php" />
+        <option value="$PROJECT_DIR$/THEME/bubbly-1-0/login.html" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_10_24_052157_create_menus_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/menu/index.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_05_16_052257_laratrust_setup_tables.php" />
+        <option value="$PROJECT_DIR$/database/seeds/MenusTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/resources/views/menu/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MenuController.php" />
+        <option value="$PROJECT_DIR$/database/seeds/PermissionsTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AclController.php" />
+        <option value="$PROJECT_DIR$/resources/views/role/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/role/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/notice/loginFormNoAuth.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/notice/registerApplicant.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginApplicantController.php" />
+        <option value="$PROJECT_DIR$/resources/views/notice/loginApplicant.blade.php" />
+        <option value="$PROJECT_DIR$/public/joli/css/theme-black.css" />
+        <option value="$PROJECT_DIR$/public/joli/css/theme-blue.css" />
+        <option value="$PROJECT_DIR$/public/joli/css/theme-brown.css" />
+        <option value="$PROJECT_DIR$/public/joli/css/theme-default.css" />
+        <option value="$PROJECT_DIR$/public/joli/css/theme-white.css" />
+        <option value="$USER_HOME$/Desktop/New folder/stack-opl/index.html" />
+        <option value="$PROJECT_DIR$/public/welcome/main.css" />
+        <option value="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/includes/bubbly/header.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_10_25_091112_create_offices_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/OfficeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/office/index.blade.php" />
+        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/IncrementController.php" />
+        <option value="$PROJECT_DIR$/resources/views/test.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/includes/bubbly/sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/permission/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/joli.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApplicantController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/permission/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/partial/joli/navigation.blade.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/kkszymanowski/traitor" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/santigarcor/laratrust" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/google/apiclient" />
+      <path value="$PROJECT_DIR$/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/vendor/google/apiclient-services" />
+      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
+              <item name="bubbly" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="partial" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="partial" type="462c0819:PsiDirectoryNode" />
+              <item name="joli" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="permission" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/actual" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9e72726-c4db-46b1-a7b4-128c721acd4e" name="Default Changelist" comment="" />
+      <created>1557914456695</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1557914456695</updated>
+      <workItem from="1557914458165" duration="843000" />
+      <workItem from="1557915527058" duration="12000" />
+      <workItem from="1557915540874" duration="2094000" />
+      <workItem from="1557983081044" duration="13696000" />
+      <workItem from="1558070756411" duration="9305000" />
+      <workItem from="1558158888785" duration="12498000" />
+      <workItem from="1558417125127" duration="12904000" />
+      <workItem from="1558502316315" duration="14922000" />
+      <workItem from="1558590801333" duration="9519000" />
+      <workItem from="1558674430949" duration="2529000" />
+      <workItem from="1558762631415" duration="10462000" />
+      <workItem from="1558934740698" duration="11900000" />
+      <workItem from="1559019750736" duration="9050000" />
+      <workItem from="1559109690374" duration="6597000" />
+      <workItem from="1559193738775" duration="13002000" />
+      <workItem from="1559280109046" duration="8407000" />
+      <workItem from="1561098408793" duration="6758000" />
+      <workItem from="1561186314030" duration="11938000" />
+      <workItem from="1561365177307" duration="2539000" />
+      <workItem from="1561441983510" duration="1643000" />
+      <workItem from="1561464297522" duration="5992000" />
+      <workItem from="1561529083649" duration="4618000" />
+      <workItem from="1561615358335" duration="594000" />
+      <workItem from="1561707337944" duration="841000" />
+      <workItem from="1561962655452" duration="1674000" />
+      <workItem from="1561968565943" duration="4828000" />
+      <workItem from="1562048787654" duration="10229000" />
+      <workItem from="1562144369089" duration="17018000" />
+      <workItem from="1562226447840" duration="9140000" />
+      <workItem from="1562307277215" duration="10222000" />
+      <workItem from="1562393202910" duration="21078000" />
+      <workItem from="1562569545462" duration="16277000" />
+      <workItem from="1562654201911" duration="5246000" />
+      <workItem from="1562738509906" duration="12934000" />
+      <workItem from="1562826335655" duration="4192000" />
+      <workItem from="1562835161795" duration="5834000" />
+      <workItem from="1562844323265" duration="10114000" />
+      <workItem from="1562917394093" duration="1778000" />
+      <workItem from="1562925282510" duration="255000" />
+      <workItem from="1562928390035" duration="7686000" />
+      <workItem from="1563000553742" duration="17327000" />
+      <workItem from="1563171150808" duration="20879000" />
+      <workItem from="1563258072597" duration="13024000" />
+      <workItem from="1563335899259" duration="594000" />
+      <workItem from="1563341727804" duration="16596000" />
+      <workItem from="1563423898627" duration="21153000" />
+      <workItem from="1563510948958" duration="283000" />
+      <workItem from="1563511968328" duration="50000" />
+      <workItem from="1563512036138" duration="7128000" />
+      <workItem from="1563529733051" duration="8555000" />
+      <workItem from="1563598156652" duration="21916000" />
+      <workItem from="1563773252524" duration="888000" />
+      <workItem from="1563776047795" duration="14519000" />
+      <workItem from="1563858133029" duration="14622000" />
+      <workItem from="1564031728967" duration="125000" />
+      <workItem from="1564032329902" duration="176000" />
+      <workItem from="1564032530246" duration="129000" />
+      <workItem from="1564032676498" duration="17264000" />
+      <workItem from="1564121132224" duration="15773000" />
+      <workItem from="1564204692951" duration="14801000" />
+      <workItem from="1564377288256" duration="7544000" />
+      <workItem from="1564467707970" duration="1188000" />
+      <workItem from="1564551949556" duration="15102000" />
+      <workItem from="1564636884384" duration="12924000" />
+      <workItem from="1564722689572" duration="21833000" />
+      <workItem from="1564986252224" duration="3333000" />
+      <workItem from="1565000937551" duration="3971000" />
+      <workItem from="1565071694200" duration="9746000" />
+      <workItem from="1565097151645" duration="4081000" />
+      <workItem from="1565157724469" duration="10308000" />
+      <workItem from="1565242116838" duration="17458000" />
+      <workItem from="1566191814704" duration="10847000" />
+      <workItem from="1566278071111" duration="15060000" />
+      <workItem from="1566365034975" duration="13688000" />
+      <workItem from="1566451847540" duration="17382000" />
+      <workItem from="1566540405719" duration="6158000" />
+      <workItem from="1567144355211" duration="11189000" />
+      <workItem from="1567404601205" duration="1373000" />
+      <workItem from="1567498323455" duration="1195000" />
+      <workItem from="1567590765210" duration="1200000" />
+      <workItem from="1567663727095" duration="20793000" />
+      <workItem from="1567750293119" duration="11191000" />
+      <workItem from="1567836837940" duration="18203000" />
+      <workItem from="1568009384853" duration="35000" />
+      <workItem from="1568009441178" duration="18814000" />
+      <workItem from="1568096747831" duration="17618000" />
+      <workItem from="1568184680538" duration="18256000" />
+      <workItem from="1568270424394" duration="4686000" />
+      <workItem from="1568291565606" duration="1240000" />
+      <workItem from="1568355046498" duration="8902000" />
+      <workItem from="1568443435492" duration="5967000" />
+      <workItem from="1568455325923" duration="1307000" />
+      <workItem from="1568617281720" duration="16256000" />
+      <workItem from="1568704183115" duration="20865000" />
+      <workItem from="1568787903427" duration="15637000" />
+      <workItem from="1568875787225" duration="12460000" />
+      <workItem from="1568965600799" duration="10883000" />
+      <workItem from="1569047890963" duration="15801000" />
+      <workItem from="1569216537553" duration="13607000" />
+      <workItem from="1569302517469" duration="18363000" />
+      <workItem from="1569389016611" duration="19860000" />
+      <workItem from="1569475319157" duration="13245000" />
+      <workItem from="1569557913726" duration="14461000" />
+      <workItem from="1569648937713" duration="17601000" />
+      <workItem from="1569844947192" duration="1380000" />
+      <workItem from="1569908299009" duration="8755000" />
+      <workItem from="1569931989529" duration="1767000" />
+      <workItem from="1569991697502" duration="2724000" />
+      <workItem from="1569997304366" duration="275000" />
+      <workItem from="1569997595180" duration="19721000" />
+      <workItem from="1570083769675" duration="14345000" />
+      <workItem from="1570167726813" duration="7842000" />
+      <workItem from="1570252173712" duration="16062000" />
+      <workItem from="1570423640525" duration="13113000" />
+      <workItem from="1570595989249" duration="369000" />
+      <workItem from="1570596376987" duration="9284000" />
+      <workItem from="1570687014363" duration="17929000" />
+      <workItem from="1570778988082" duration="1384000" />
+      <workItem from="1570858229790" duration="9866000" />
+      <workItem from="1571032066388" duration="29000" />
+      <workItem from="1571032116232" duration="9524000" />
+      <workItem from="1571051937697" duration="487000" />
+      <workItem from="1571116140851" duration="7258000" />
+      <workItem from="1571286085529" duration="25000" />
+      <workItem from="1571286133513" duration="17821000" />
+      <workItem from="1571376513749" duration="11597000" />
+      <workItem from="1571463737510" duration="12401000" />
+      <workItem from="1571651309133" duration="7730000" />
+      <workItem from="1571805006121" duration="18016000" />
+      <workItem from="1571891730683" duration="16051000" />
+      <workItem from="1571982068347" duration="6785000" />
+      <workItem from="1571998687810" duration="768000" />
+      <workItem from="1571999483850" duration="9573000" />
+      <workItem from="1572071797651" duration="11567000" />
+      <workItem from="1572238955158" duration="15460000" />
+      <workItem from="1572325153517" duration="10547000" />
+      <workItem from="1572409882619" duration="16660000" />
+      <workItem from="1572499367508" duration="14865000" />
+      <workItem from="1572586820541" duration="19003000" />
+      <workItem from="1572677160852" duration="2350000" />
+      <workItem from="1572845208258" duration="18789000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1382999000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984756" visible="true" weight="0.21321961" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" sideWeight="0.5015244" side_tool="true" weight="0.15884861" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32929516" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5021322" side_tool="true" weight="0.24303234" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4978678" weight="0.2831661" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984756" visible="true" weight="0.24466951" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" sideWeight="0.5015244" side_tool="true" weight="0.15884861" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32929516" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5021322" side_tool="true" weight="0.24303234" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4978678" weight="0.2831661" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AclController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="159" column="40" selection-start-line="159" selection-start-column="40" selection-end-line="159" selection-end-column="40" />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/role/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="108" column="80" selection-start-line="108" selection-start-column="80" selection-end-line="108" selection-end-column="90" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#5;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#1;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#5;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#2;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#5;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#3;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#5;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#4;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#5;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#5;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#1;n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#5;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#2;n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#5;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#3;n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#5;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#4;n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#5;n#section#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/role/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1369">
+          <caret line="111" column="47" selection-start-line="111" selection-start-column="47" selection-end-line="111" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#1;n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#2;n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#3;n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#4;n#div#1;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#1;n#div#2;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#2;n#div#2;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#3;n#div#2;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#4;n#div#2;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#section#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/notice/applyFormNoAuth.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="811">
+          <caret line="272" column="49" selection-start-line="272" selection-start-column="49" selection-end-line="272" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginApplicantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/notice/loginFormNoAuth.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="38" column="12" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="72" selection-end-column="19" />
+          <folding>
+            <element signature="e#1019#1087#0#HTML" expanded="true" />
+            <element signature="n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#3163#3193#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/notice/registerApplicant.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="99" selection-end-column="19" />
+          <folding>
+            <element signature="e#1031#1099#0#HTML" expanded="true" />
+            <element signature="n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/joli/css/theme-white.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="3892" column="41" lean-forward="true" selection-start-line="3892" selection-start-column="41" selection-end-line="3892" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/joli/css/theme-default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="3886" column="1" lean-forward="true" selection-start-line="3886" selection-start-column="1" selection-end-line="3886" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/joli/css/theme-brown.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="3892" column="16" lean-forward="true" selection-start-line="3892" selection-start-column="16" selection-end-line="3892" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/joli/css/theme-blue.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="3886" column="14" lean-forward="true" selection-start-line="3886" selection-start-column="14" selection-end-line="3886" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/joli/css/theme-black.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="3891" column="39" lean-forward="true" selection-start-line="3891" selection-start-column="39" selection-end-line="3891" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/notice/loginApplicant.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#1262#1330#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/New folder/stack-opl/index.html" />
+    <entry file="file://$PROJECT_DIR$/public/welcome/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="662" column="1" selection-start-line="662" selection-start-column="1" selection-end-line="662" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="54" column="62" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" lean-forward="true" selection-end-line="231" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="51" column="42" lean-forward="true" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="75" column="12" lean-forward="true" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/increment/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2596" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_25_091112_create_offices_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OfficeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/joli/js/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4972" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/joli/js/plugins.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3816" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/joli/js/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-936" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/office/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="52" column="105" selection-start-line="52" selection-start-column="105" selection-end-line="52" selection-end-column="112" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/includes/bubbly/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="121" column="22" lean-forward="true" selection-start-line="121" selection-start-column="22" selection-end-line="121" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/AuthServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="167" column="26" selection-start-line="167" selection-end-line="168" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/IncrementController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3124">
+          <caret line="78" column="58" selection-start-line="78" selection-start-column="58" selection-end-line="78" selection-end-column="58" />
+          <folding>
+            <element signature="e#38#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/includes/bubbly/footer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="39" column="41" lean-forward="true" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/test.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1004">
+          <caret line="394" selection-start-line="394" selection-end-line="394" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4924">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="178" column="28" selection-start-line="178" selection-start-column="28" selection-end-line="178" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/santigarcor/laratrust/src/Laratrust/LaratrustServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3188">
+          <caret line="178" column="42" selection-start-line="178" selection-start-column="42" selection-end-line="178" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/MenusTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/includes/bubbly/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/menu">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApplicantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="193" column="34" selection-start-line="193" selection-start-column="34" selection-end-line="193" selection-end-column="34" />
+          <folding>
+            <element signature="e#40#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/permission/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="62" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="73" column="38" lean-forward="true" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/permission/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="90" column="48" lean-forward="true" selection-start-line="90" selection-start-column="48" selection-end-line="90" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partial/joli/navigation.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1844">
+          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/joli.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
