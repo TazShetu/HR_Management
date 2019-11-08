@@ -24,7 +24,6 @@
                           method="post">
                         @csrf
                         <div class="panel-body">
-
                             <div class="form-group">
                                 <label class="col-md-3 col-xs-12 control-label">Display Name</label>
                                 <div class="col-md-6 col-xs-12">
@@ -32,10 +31,10 @@
                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                                         <input type="text" value="{{$pedit->display_name}}" name="displayName" required
                                                class="form-control {{$errors->has('displayName') ? 'is-invalid' : ''}}">
-                                        @if($errors->has('displayName'))
-                                            <span class="help-block text-danger">{{$errors->first('displayName')}}</span>
-                                        @endif
                                     </div>
+                                    @if($errors->has('displayName'))
+                                        <span class="help-block text-danger">{{$errors->first('displayName')}}</span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">
@@ -45,10 +44,10 @@
                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                                         <input type="text" value="{{$pedit->description}}" name="description" required
                                                class="form-control {{$errors->has('description') ? 'is-invalid' : ''}}">
-                                        @if($errors->has('description'))
-                                            <span class="help-block text-danger">{{$errors->first('description')}}</span>
-                                        @endif
                                     </div>
+                                    @if($errors->has('description'))
+                                        <span class="help-block text-danger">{{$errors->first('description')}}</span>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -109,23 +108,14 @@
 @endsection
 @section('script')
     <!-- START THIS PAGE PLUGINS-->
-    <script type='text/javascript' src='{{asset('joli/js/plugins/icheck/icheck.min.js')}}'></script>
-    <script type="text/javascript"
-            src="{{asset('joli/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('joli/js/demo_tables.js')}}"></script>
-    <script type='text/javascript' src='{{asset('joli/js/plugins/icheck/icheck.min.js')}}'></script>
-    <script type="text/javascript"
-            src="{{asset('joli/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-datepicker.js')}}"></script>
-    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-file-input.js')}}"></script>
-    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-select.js')}}"></script>
-    <script type="text/javascript" src="{{asset('joli/js/plugins/tagsinput/jquery.tagsinput.min.js')}}"></script>
+{{--    <script type='text/javascript' src='{{asset('joli/js/plugins/icheck/icheck.min.js')}}'></script>--}}
+{{--    <script type="text/javascript" src="{{asset('joli/js/demo_tables.js')}}"></script>--}}
+{{--    <script type='text/javascript' src='{{asset('joli/js/plugins/icheck/icheck.min.js')}}'></script>--}}
+{{--    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-datepicker.js')}}"></script>--}}
+{{--    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-file-input.js')}}"></script>--}}
+{{--    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-select.js')}}"></script>--}}
+{{--    <script type="text/javascript" src="{{asset('joli/js/plugins/tagsinput/jquery.tagsinput.min.js')}}"></script>--}}
     <!-- END THIS PAGE PLUGINS-->
-    <script>
-        $(document).on('click', '.back', function () {
-            $(this).attr('href', $(this).attr('data-link'));
-        })
-    </script>
 @endsection
 
 {{--@include('includes.bubbly.header')--}}

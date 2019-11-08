@@ -60,7 +60,7 @@ class TaxController extends Controller
                 'branch' => 'required',
                 'from' => 'required|min:1',
                 'to' => 'required|gt:from',
-                'tax' => 'required|numeric|min:0.01|max:100',
+                'tax' => 'required|numeric|min:0|max:100',
             ]);
             $taxes = Tax::where('branch_id', $request->branch)->get();
             foreach ($taxes as $ta){
@@ -105,15 +105,18 @@ class TaxController extends Controller
     public function edit($tid)
     {
         if (Auth::user()->can('tax')){
-            $isGross = Pension::find(1)->tax_is_gross;
             $tedit = Tax::find($tid);
             $tedit['title'] = Branch::find($tedit->branch_id)->title;
             $branches = Branch::all();
             $taxes = Tax::orderBy('branch_id')->orderBy('from')->get();
+            $p = Pension::find(1);
+            $isGross = $p->tax_is_gross;
+            $max_tax = $p->max_tax;
+            $default_tax = $p->default_tax;
             foreach ($taxes as $t){
                 $t['title'] = Branch::find($t->branch_id)->title;
             }
-            return view('tax.edit', compact('branches', 'taxes', 'tedit', 'isGross'));
+            return view('tax.edit', compact('branches', 'taxes', 'tedit', 'isGross', 'max_tax', 'default_tax'));
         } else {
             abort(403);
         }
@@ -127,7 +130,7 @@ class TaxController extends Controller
                 'branch' => 'required',
                 'from' => 'required|min:1',
                 'to' => 'required|gt:from',
-                'tax' => 'required|numeric|min:0.01|max:100',
+                'tax' => 'required|numeric|min:0|max:100',
             ]);
             $taxes = Tax::where('branch_id', $request->branch)->where('id', '!=', $tid)->get();
             foreach ($taxes as $ta){

@@ -13,6 +13,14 @@
     <div id="hero-area" class="hero-area-bg" style='background: url("{{asset('welcome/hero-bg.png')}}"); min-height: 717px;'>
         @auth
             <a href="{{ route('home') }}" class="btn btn-outline-primary text-dark float-right m-4">Home</a>
+            <a href="#" class="btn btn-outline-danger btn-sm text-dark m-4"
+               onclick="event.preventDefault();document.getElementById('logout-form').submit();"
+            >
+                Logout
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         @else
             <a href="{{ route('login') }}" class="btn btn-outline-primary text-dark float-right m-4">Employee Log In</a>
         @endauth

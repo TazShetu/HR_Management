@@ -2,18 +2,9 @@
 
 namespace App\Http\Controllers;
 
-//use App\Leave;
-use App\Applicant;
-use App\Branch;
 use App\Job;
-use App\Leave;
-use App\Notice;
-use App\Project;
 use App\Role;
-use App\Salary;
 use App\User;
-//use Carbon\Carbon;
-use App\Userloan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -86,8 +77,8 @@ class HomeController extends Controller
     {
         if (Auth::user()->can('user_create')) {
             $users = User::all();
-            $roles = Role::where('name', 'general_user')->get();
-            return view('users.index', compact('users', 'roles'));
+            $role = Role::where('name', 'general_user')->first();
+            return view('users.index', compact('users', 'role'));
         } else {
             abort(403);
         }
@@ -110,7 +101,7 @@ class HomeController extends Controller
                 $u->email = $request->email;
                 $u->password = bcrypt($request->password);
                 $u->save();
-                $u->attachRoles($request->role);
+                $u->attachRole($request->role);
                 DB::commit();
                 $success = true;
             } catch (\Exception $e) {
@@ -122,7 +113,7 @@ class HomeController extends Controller
                 return redirect()->back();
             } else {
                 Session::flash('unsuccess', "Something went wrong :(");
-                return redirect()->route('role');
+                return redirect()->back();
             }
         } else {
             abort(403);
@@ -135,9 +126,8 @@ class HomeController extends Controller
         if (Auth::user()->can('user_create') && ($uid * 1) > 2) {
             $uedit = User::find($uid);
             $users = User::all();
-            $roles = Role::where('name', 'general_user')->get();
-            $rs = $uedit->roles()->get();
-            return view('users.edit', compact('users', 'uedit', 'roles', 'rs'));
+            $role = Role::where('name', 'general_user')->first();
+            return view('users.edit', compact('users', 'uedit', 'role'));
         } else {
             abort(403);
         }
@@ -169,7 +159,7 @@ class HomeController extends Controller
                 $u->name = $request->name;
                 $u->email = $request->email;
                 $u->update();
-                $u->syncRoles($request->role);
+                $u->syncRoles([$request->role]);
                 DB::commit();
                 $success = true;
             } catch (\Exception $e) {

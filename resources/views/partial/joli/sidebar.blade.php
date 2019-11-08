@@ -9,14 +9,13 @@
 <!-- START X-NAVIGATION -->
     <ul class="x-navigation">
         <li class="xn-logo">
-            <a href="index.html" style="background-color:
+            <a href="{{url('/')}}" style="background-color:
             @if($OfficE && $OfficE->logo_bg)
             {{$OfficE->logo_bg}}
             @else
                     #1caf9a
             @endif
-                    ;"
-            >
+                    ;">
                 @if($OfficE && $OfficE->logo)
                     <img src="{{asset($OfficE->logo)}}" alt="logo"
                          style="max-width: 180px;max-height: 35px;margin-top: -8px;">

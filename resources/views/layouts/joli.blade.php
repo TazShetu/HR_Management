@@ -12,7 +12,8 @@
     <!-- END META SECTION -->
 
     <!-- CSS INCLUDE -->
-    <link rel="stylesheet" type="text/css" id="theme" href="{{asset('bubbly/vendor/bootstrap/css/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" type="text/css" id="theme"
+          href="{{asset('bubbly/vendor/bootstrap/css/bootstrap.min.css')}}"/>
     <link rel="stylesheet" type="text/css" id="theme" href="{{asset('joli/css/bootstrap/bootstrap.min.css')}}"/>
     @yield('link')
     <link rel="stylesheet" type="text/css" id="theme" href="{{asset('joli/css/theme-default.css')}}"/>
@@ -76,6 +77,8 @@
 
 <!-- START THIS PAGE PLUGINS-->
 @yield('script')
+<script type="text/javascript"
+        src="{{asset('joli/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js')}}"></script>
 <!-- END THIS PAGE PLUGINS-->
 
 <!-- START TEMPLATE -->
@@ -85,16 +88,9 @@
 <script type="text/javascript" src="{{asset('joli/js/plugins.js')}}"></script>
 <script type="text/javascript" src="{{asset('joli/js/actions.js')}}"></script>
 <!-- END TEMPLATE -->
-<script>
-    $(function () {
-        $('.x-navigation li a').filter(function () {
-            return this.href === location.href;
-        }).closest("li").addClass('active');
-        $('.x-navigation li ul li a').filter(function () {
-            return this.href === location.href;
-        }).closest("li").addClass('active').parents("li").addClass('active');
-    });
-</script>
+{{--Custom Js--}}
+<script type="text/javascript" src="{{asset('joli/js/custom.js')}}"></script>
+{{--Custom Js End--}}
 <!-- END SCRIPTS -->
 </body>
 </html>

@@ -11,7 +11,7 @@ class CreateBranchesTable extends Migration
     {
         Schema::create('branches', function (Blueprint $table) {
             $table->bigIncrements('id')->index();
-            $table->string('title');
+            $table->string('title')->unique();
             $table->timestamps();
         });
     }

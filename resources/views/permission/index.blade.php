@@ -55,10 +55,8 @@
 @endsection
 @section('script')
     <!-- START THIS PAGE PLUGINS-->
-    <script type='text/javascript' src='{{asset('joli/js/plugins/icheck/icheck.min.js')}}'></script>
-    <script type="text/javascript"
-            src="{{asset('joli/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('joli/js/demo_tables.js')}}"></script>
+    {{--    <script type='text/javascript' src='{{asset('joli/js/plugins/icheck/icheck.min.js')}}'></script>--}}
+    {{--    <script type="text/javascript" src="{{asset('joli/js/demo_tables.js')}}"></script>--}}
     <!-- END THIS PAGE PLUGINS-->
 @endsection
 

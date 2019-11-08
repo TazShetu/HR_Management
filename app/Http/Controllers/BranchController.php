@@ -44,7 +44,7 @@ class BranchController extends Controller
                 $b = new Branch;
                 $b->title = $request->title;
                 $b->save();
-                $taxes = [0 => [1, 250000, 0], 1 => [250000, 400000, 10], 2 => [400001, 500000, 15], 3 => [500001, 600000, 20], 4 => [600001, 3000000, 25]];
+                $taxes = [0 => [1, 250000, 0], 1 => [250001, 400000, 10], 2 => [400001, 500000, 15], 3 => [500001, 600000, 20], 4 => [600001, 3000000, 25]];
                 foreach ($taxes as $t){
                     $tt = new Tax;
                     $tt->branch_id = $b->id;
