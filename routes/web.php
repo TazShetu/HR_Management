@@ -104,6 +104,8 @@ Route::get('/Designation/Delete/{jid}', 'JobController@destroy')->name('job.dele
 
 Route::get('/Circular', 'NoticeController@index')->name('circular');
 Route::post('/Circular/store', 'NoticeController@store')->name('circular.store');
+Route::post('/notice/{nid}/applied-users', 'NoticeController@totalAppliedUser')->name('total.applied.user');
+Route::post('/notice/{nid}/delete', 'NoticeController@noticeDelete')->name('notice.delete');
 Route::get('/Notice-unpublish/{nid}', 'NoticeController@unpublish')->name('circular.unpublish');
 Route::get('/Notice-publish/{nid}', 'NoticeController@publish')->name('circular.publish');
 Route::get('/Circular/{nid}', 'NoticeController@view')->name('notice.view');
@@ -413,13 +415,5 @@ Route::post('/Account-Close-Permanently', [
 
 Route::get('/user/{id}/cv', 'UserinfoController@cv')->name('user.cv');
 
-Route::get('/notice/{nid}/applied-users', [
-    'uses' => 'NoticeController@totalAppliedUser',
-    'as' => 'total.applied.user'
-]);
-Route::get('/notice/{nid}/delete', [
-    'uses' => 'NoticeController@noticeDelete',
-    'as' => 'notice.delete'
-]);
 
 

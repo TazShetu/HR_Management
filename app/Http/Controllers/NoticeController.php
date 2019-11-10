@@ -9,6 +9,7 @@ use App\Job;
 use App\Notice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class NoticeController extends Controller
@@ -214,27 +215,32 @@ class NoticeController extends Controller
 
     public function totalAppliedUser($nid)
     {
-        return Applicant::where('notice_id', $nid)->count();
+        $notice = Notice::find($nid);
+        $applicants = $notice->applicants()->get();
+        return count($applicants );
     }
 
     public function noticeDelete($nid)
     {
         if (Auth::user()->can('circular')) {
-            $applicants = Applicant::where('notice_id', $nid)->get();
-            if ($applicants->count() > 0) {
-                foreach ($applicants as $value) {
-                    if (file_exists($value->image)) {
-                        unlink($value->image);
-                    }
-                    if (file_exists($value->cv)) {
-                        unlink($value->cv);
-                    }
-                    $value->delete();
-                }
+            DB::beginTransaction();
+            try {
+                $n = Notice::find($nid);
+                $n->applicants()->detach();
+                $n->delete();
+                DB::commit();
+                $success = true;
+            } catch (\Exception $e) {
+                $success = false;
+                DB::rollback();
             }
-            Notice::find($nid)->delete();
-            Session::flash('success', "Notice has been forcefully deleted.");
-            return redirect()->route('notice');
+            if ($success) {
+                Session::flash('success', "Notice has been forcefully deleted.");
+                return redirect()->route('circular');
+            } else {
+                Session::flash('unsuccess', "Something went wrong :(");
+                return redirect()->route('circular');
+            }
         } else {
             abort(403);
         }

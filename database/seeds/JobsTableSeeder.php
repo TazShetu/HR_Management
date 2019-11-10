@@ -64,14 +64,14 @@ class JobsTableSeeder extends Seeder
             'provident' => 1,
         ]);
         App\Job::create([
-            'title' => 'Jr. Web Developer (Grade I)',
+            'title' => 'Senior Web Developer (Grade I)',
             'supervisor_id' => 8,
             'payscale_id' => '1',
             'maxLoanInPercentage' => 50,
             'provident' => 1,
         ]);
         App\Job::create([
-            'title' => 'Jr. Web Developer (Grade II)',
+            'title' => 'Senior Web Developer (Grade II)',
             'supervisor_id' => 8,
             'payscale_id' => '1',
             'maxLoanInPercentage' => 50,
@@ -92,14 +92,14 @@ class JobsTableSeeder extends Seeder
             'provident' => 1,
         ]);
         App\Job::create([
-            'title' => 'Senior Web Developer (Grade I)',
+            'title' => 'Jr. Web Developer (Grade I)',
             'supervisor_id' => 8,
             'payscale_id' => '1',
             'maxLoanInPercentage' => 50,
             'provident' => 1,
         ]);
         App\Job::create([
-            'title' => 'Senior Web Developer (Grade II)',
+            'title' => 'Jr. Web Developer (Grade II)',
             'supervisor_id' => 8,
             'payscale_id' => '1',
             'maxLoanInPercentage' => 50,
