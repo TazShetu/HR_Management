@@ -36,10 +36,6 @@
                 <div class="alert alert-success text-center">
                     {{session('success')}}
                 </div>
-            @elseif(session('EmployeeSelectSuccess'))
-                <div class="alert alert-success text-center">
-                    {{session('EmployeeSelectSuccess')}}
-                </div>
             @elseif(session('NoApplicant'))
                 <div class="alert alert-warning text-center">
                     {{session('NoApplicant')}}
