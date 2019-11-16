@@ -203,7 +203,7 @@
                         <li><a href="{{route('transfer.join')}}"><span
                                         class="fa fa-sitemap"></span> {{$menu[25]->display_name}}
                             </a></li>
-                        <li><a href="{{route('test')}}"><span class="fa fa-download"></span> Test</a></li>
+{{--                        <li><a href="{{route('test')}}"><span class="fa fa-download"></span> Test</a></li>--}}
                     </ul>
                 </li>
                 @endpermission
