@@ -81,7 +81,7 @@
                         <div class="panel-footer">
                             <a title="refresh" class="btn btn-default back" data-link="{{route('back')}}"><span
                                         class="fa fa-refresh"></span></a>
-                            <button class="btn btn-primary pull-right">Update</button>
+                            <button class="btn btn-primary pull-right">Submit</button>
                         </div>
                     </form>
                     {{--     Form end               --}}
