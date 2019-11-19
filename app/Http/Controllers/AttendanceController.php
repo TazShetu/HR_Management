@@ -1,11 +1,13 @@
 <?php
 namespace App\Http\Controllers;
+
 use App\Pension;
 use App\User;
 use App\Attendance;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+
 class AttendanceController extends Controller
 {
 
@@ -20,7 +22,7 @@ class AttendanceController extends Controller
         $currentMonthAttendances = DB::table('attendances')->where('user_id', Auth::id())
             ->whereRaw('MONTH(date) = ?', [date('m')])
             ->where('branch_id', Auth::user()->branch_id)
-            ->latest()->get();
+            ->orderBy('date', 'desc')->get();
         $todayAttendanceExist = Attendance::where('user_id', Auth::id())->where('date', date('Y-m-d'))->where('branch_id', Auth::user()->branch_id)->first();
         $inExist = false;
         $outExist = false;
@@ -115,14 +117,14 @@ class AttendanceController extends Controller
             <div class="table-responsive">
             <table class="table table-bordered text-center">
                 <tr>
-                    <th>SL</th>
-                    <th>Date</th>
-                    <th>IN <small>Time</small></th>
-                    <th>OUT <small>Time</small></th>
-                    <th>Total <small>Time</small></th>
-                    <th>Under <small>Time</small></th>
-                    <th>Over <small>Time</small></th>
-                    <th>Action</th>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">IN <small>Time</small></th>
+                    <th class="text-center">OUT <small>Time</small></th>
+                    <th class="text-center">Total <small>Time</small></th>
+                    <th class="text-center">Under <small>Time</small></th>
+                    <th class="text-center">Over <small>Time</small></th>
+                    <th class="text-center">Action</th>
                 </tr>
         ';
             if ($timeExist->count() > 0) {
@@ -152,7 +154,7 @@ class AttendanceController extends Controller
                     }
                     $output .= '
                     <tr>
-                        <td># '.($key + 1).'</td>
+                        <td>'.($key + 1).'</td>
                         <td>'.date('d M, Y', strtotime($value->date)).'</td>
                         <td>'.date('h : i : s A', strtotime($value->time_in)).'</td>
                         <td>'.date('h : i : s A', strtotime($value->time_out)).'</td>
@@ -160,8 +162,8 @@ class AttendanceController extends Controller
                         <td>'.$under_time.'</td>
                         <td>'.$over_time.'</td>
                         <td> 
-                            <a href="'.route('attendance.edit', $value->id).'" class="btn btn-info btn-sm">
-                                <i class="fa fa-edit"></i>
+                            <a href="'.route('attendance.edit', $value->id).'" class="btn btn-success btn-sm">
+                               <i class="fa fa-pencil"></i>
                             </a>
                         </td>
                     </tr>
@@ -182,7 +184,7 @@ class AttendanceController extends Controller
                             <tr>
                                 <th>Total Working Time</th>
                                 <td>:</td>
-                                <td>'.$this->sum_times($workingTimes).' hours</td>
+                                <td>'.$this->sum_times($workingTimes).'</td>
                             </tr>
                             <tr>
                                 <th>Total Over Time</th>

@@ -37,7 +37,7 @@ class LeaveController extends Controller
                     $l['type'] = $lt->type;
                 }
             }
-            $leaveOldDates = Leavedate::where('user_id', $user->id)->latest()->get();
+            $leaveOldDates = Leavedate::where('user_id', $user->id)->orderBy('date', 'desc')->get();
             if (count($leaveOldDates) > 0) {
                 foreach ($leaveOldDates as $ll) {
                     $l = Leavetype::find($ll->leavetype_id);
@@ -291,7 +291,7 @@ class LeaveController extends Controller
         if (Auth::user()->can('l_supervisor')) {
             $this->validate($request, [
                 'name' => 'required',
-                'fromDate' => 'required|date|after_or_equal:today',
+                'fromDate' => 'required|date',
             ]);
             $dbOldDates = Leavedate::select('date')->where('user_id', $request->name)->get();
             $oldDates = [];
