@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e72726-c4db-46b1-a7b4-128c721acd4e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WarningController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WarningController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/kpi/vote/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/kpi/vote/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/joli.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/joli.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/loan_type/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/loan_type/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/loan_type/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/loan_type/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/test.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/warning/appealCreate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/warning/appealCreate.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/warning/appealRejectHearing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/warning/appealRejectHearing.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/warning/appealView.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/warning/appealView.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/warning/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/warning/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/warning/verbalHearingCreate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/warning/verbalHearingCreate.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/warning/warningViewDH.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/warning/warningViewDH.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/warning/warningViewHR.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/warning/warningViewHR.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/warning/writtenHearingCreate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/warning/writtenHearingCreate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/kpi/setup/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/kpi/setup/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +22,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
+            <state relative-caret-position="1512">
               <caret line="63" column="24" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="24" />
             </state>
           </provider>
@@ -43,41 +31,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/joli.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-840">
-              <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="321" column="29" lean-forward="true" selection-start-line="321" selection-start-column="29" selection-end-line="321" selection-end-column="56" />
+            <state relative-caret-position="528">
+              <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/kpi/vote/index.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="719">
-              <caret line="62" column="14" lean-forward="true" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
-              <folding>
-                <element signature="e#1517#1542#0#HTML" expanded="true" />
-                <element signature="e#1664#1688#0#HTML" expanded="true" />
-                <element signature="e#2318#2343#0#HTML" expanded="true" />
-                <element signature="e#2490#2514#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="-340">
+              <caret line="321" column="29" selection-start-line="321" selection-start-column="29" selection-end-line="321" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/users/index.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/kpi/setup/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="21" column="48" lean-forward="true" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+            <state relative-caret-position="179">
+              <caret line="89" column="38" lean-forward="true" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -132,7 +105,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/leave/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NoticeController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -183,6 +155,7 @@
         <option value="$PROJECT_DIR$/resources/views/warning/verbalHearingCreate.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/warning/writtenHearingCreate.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/kpi/vote/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/kpi/setup/index.blade.php" />
       </list>
     </option>
   </component>
@@ -292,7 +265,7 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -302,7 +275,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -326,12 +298,28 @@
               <item name="HR" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
+              <item name="branch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="kpi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="kpi" type="462c0819:PsiDirectoryNode" />
+              <item name="setup" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -516,12 +504,13 @@
       <workItem from="1573714545985" duration="3121000" />
       <workItem from="1573798355703" duration="8759000" />
       <workItem from="1574058136494" duration="18054000" />
-      <workItem from="1574145745661" duration="18553000" />
+      <workItem from="1574145745661" duration="19042000" />
+      <workItem from="1574401604497" duration="4586000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1513956000" />
+    <option name="totallyTimeSpent" value="1519031000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -534,9 +523,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984756" visible="true" weight="0.2153518" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984756" visible="true" weight="0.21748401" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5015244" side_tool="true" weight="0.15884861" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -638,20 +626,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php</url>
-          <line>329</line>
-          <option name="timeStamp" value="97" />
+          <line>340</line>
+          <option name="timeStamp" value="105" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/leave/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/increment/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -770,13 +751,6 @@
         <state relative-caret-position="-1368" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/branch/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="27" lean-forward="true" selection-end-line="116" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SalaryController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5110">
@@ -854,13 +828,6 @@
             <element signature="e#2844#2865#0#HTML" expanded="true" />
             <element signature="e#2444#2465#0#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="63" column="24" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -978,13 +945,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/joli.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-840">
-          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/warning/verbalHearingCreate.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -1011,13 +971,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="321" column="29" lean-forward="true" selection-start-line="321" selection-start-column="29" selection-end-line="321" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/users/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -1025,16 +978,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="63" column="24" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/joli.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/kpi/vote/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="62" column="14" lean-forward="true" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
-          <folding>
-            <element signature="e#1517#1542#0#HTML" expanded="true" />
-            <element signature="e#1664#1688#0#HTML" expanded="true" />
-            <element signature="e#2318#2343#0#HTML" expanded="true" />
-            <element signature="e#2490#2514#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="1200">
+          <caret line="50" column="84" selection-start-line="50" selection-start-column="84" selection-end-line="50" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/branch/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="47" column="51" selection-start-line="45" selection-start-column="23" selection-end-line="58" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/kpi/setup/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="89" column="38" lean-forward="true" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="321" column="29" selection-start-line="321" selection-start-column="29" selection-end-line="321" selection-end-column="56" />
         </state>
       </provider>
     </entry>
