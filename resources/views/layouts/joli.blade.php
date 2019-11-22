@@ -63,6 +63,9 @@
 </div>
 <!-- END PAGE CONTAINER -->
 
+<!-- Start Modal -->
+@yield('modal')
+<!-- END Modal -->
 
 <!-- START PRELOADS -->
 <audio id="audio-alert" src="{{asset('joli/audio/alert.mp3')}}" preload="auto"></audio>

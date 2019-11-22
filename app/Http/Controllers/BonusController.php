@@ -30,7 +30,8 @@ class BonusController extends Controller
             foreach ($employees as $e){
                 $users[] = User::find($e->user_id);
             }
-            return view('bonus.setup', compact('bonus', 'religions', 'users'));
+            $bonus = Bonus::find(1);
+            return view('bonus.setup', compact('bonus', 'religions', 'users', 'bonus'));
         } else {
             abort(403);
         }
