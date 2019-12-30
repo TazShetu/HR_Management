@@ -1,13 +1,12 @@
 <?php
 
 Route::get('/', function () {
-    Storage::disk('local')->put('office', App\Office::find(1));
     return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/test', [
+Route::post('/test', [
     'uses' => 'HomeController@test',
     'as' => 'test'
 ]);
@@ -52,7 +51,7 @@ Route::post('/Pension/is_active_change', 'PensionController@pensionIsActiveChang
 Route::post('/Pension/is_company_pay', 'PensionController@pensionIsBoth')->name('pension.is.both');
 Route::post('/pension-update', 'PensionController@update')->name('pension.update');
 Route::get('/Pension/is_gross', 'PensionController@isGrossAjax')->middleware('auth');
-Route::get('/Pension/is_gross_text', 'PensionController@isGrossTextAjax')->middleware('auth');
+//Route::get('/Pension/is_gross_text', 'PensionController@isGrossTextAjax')->middleware('auth');
 
 Route::get('/Leave/Setup', 'LeavetypeController@index')->name('leave.setup');
 Route::post('/Leave/Setup/Update', 'LeavetypeController@updatemlpt')->name('leave.mlpt.update');
@@ -104,8 +103,8 @@ Route::get('/Designation/Delete/{jid}', 'JobController@destroy')->name('job.dele
 
 Route::get('/Circular', 'NoticeController@index')->name('circular');
 Route::post('/Circular/store', 'NoticeController@store')->name('circular.store');
-Route::post('/notice/{nid}/applied-users', 'NoticeController@totalAppliedUser')->name('total.applied.user');
-Route::post('/notice/{nid}/delete', 'NoticeController@noticeDelete')->name('notice.delete');
+Route::get('/notice/{nid}/applied-users', 'NoticeController@totalAppliedUser')->name('total.applied.user');
+Route::get('/notice/{nid}/delete', 'NoticeController@noticeDelete')->name('notice.delete');
 Route::get('/Notice-unpublish/{nid}', 'NoticeController@unpublish')->name('circular.unpublish');
 Route::get('/Notice-publish/{nid}', 'NoticeController@publish')->name('circular.publish');
 Route::get('/Circular/{nid}', 'NoticeController@view')->name('notice.view');
@@ -222,37 +221,6 @@ Route::post('/message/reply', 'PrivateMessageController@messageReply')->name('me
 Route::get('/message/inbox/{mid}/delete', 'PrivateMessageController@deleteInboxMessage')->name('message.inbox.delete');
 Route::get('/message/inbox/show/{mid}/delete', 'PrivateMessageController@deleteInboxShowMessage')->name('message.inbox.show.delete');
 
-// Project Management
-Route::get('/Tasks/Index', 'TaskController@index')->name('task.index');
-Route::get('/Tasks/create-initial-project', 'TaskController@createInitialProject')->name('task.create.initial.project');
-Route::post('/Tasks/store-initial-project', 'TaskController@storeInitialProject')->name('task.store.initial.project');
-Route::get('/Project-View/{pid}', 'TaskController@ProjectView')->name('Project.View');
-Route::get('/Project-Delete/{pid}', 'TaskController@ProjectDelete')->name('project.delete');
-Route::get('/Report-View/{tid}', 'TaskController@viewReport')->name('view.report');
-Route::get('/download-Report-file/{tid}', 'TaskController@downloadReportFile')->name('download.report.file');
-Route::get('/task-reopen/{tid}', 'TaskController@taskReopen')->name('task.reopen');
-Route::get('/task-accept/{tid}', 'TaskController@taskAccept')->name('task.accept');
-Route::post('/Tasks/update-project-title/{pid}', 'TaskController@updateProjectTitle')->name('update.project.title');
-Route::post('/Tasks/update-task/{tid}/{did}/{pid}', 'TaskController@updateTask')->name('update.task');
-Route::post('/Tasks/store-task/{did}/{pid}', 'TaskController@storeTask')->name('store.task');
-Route::get('/Tasks-Submit-View/{tid}/{did}/{pid}', 'TaskController@taskSubmitView')->name('task.submit.view');
-Route::post('/Tasks-Submit-Store/{tid}/{did}/{pid}', 'TaskController@taskSubmitStore')->name('task.submit.store');
-Route::get('/Tasks/Index-For-Employee', 'TaskController@indexForEmployee')->name('task.index.employee');
-Route::get('/Tasks-View-Employee/{tid}', 'TaskController@taskViewEmployee')->name('task.view.employee');
-Route::get('/Project-View-Employee/{pid}', 'TaskController@ProjectViewEmployee')->name('Project.View.Employee');
-
-Route::post('/comment/task/store/{tid}', 'CommenttController@store')->name('commentt.store');
-Route::get('/comment-file-download/task/{cid}', 'CommenttController@downloadCommentFile')->name('download.commentt.file');
-Route::get('/comment-edit/task/{cid}', 'CommenttController@edit')->name('commentt.edit');
-Route::post('/comment-update/task/{cid}', 'CommenttController@update')->name('commentt.update');
-Route::get('/comment-delete/task/{cid}', 'CommenttController@destroy')->name('commentt.delete');
-Route::get('/reply-create/task/{cid}', 'ReplytController@create')->name('replyt.create');
-Route::post('/reply-store/task/{cid}/{tid}', 'ReplytController@store')->name('replyt.store');
-Route::get('/reply-file-download/task/{rid}', 'ReplytController@downloadReplyFile')->name('download.replyt.file');
-Route::get('/reply-edit/task/{rid}', 'ReplytController@edit')->name('replyt.edit');
-Route::post('/reply-update/task/{rid}', 'ReplytController@update')->name('replyt.update');
-Route::get('/reply-delete/task/{rid}', 'ReplytController@destroy')->name('replyt.delete');
-
 Route::post('/comment/store/{did}/{pid}', 'CommentController@store')->name('comment.store');
 Route::get('/comment-file-download/{cid}', 'CommentController@downloadCommentFile')->name('download.comment.file');
 Route::get('/comment-edit/{cid}/{did}/{pid}', 'CommentController@edit')->name('comment.edit');
@@ -291,8 +259,80 @@ Route::get('/Salary/Edit/{sid}', 'SalaryController@edit')->name('salary.edit');
 Route::post('/Salary/update/{sid}', 'SalaryController@update')->name('salary.update');
 Route::get('/salary/csv/download', 'SalaryController@salaryCsvDownload')->name('salary.csv.download');
 
+// Project Management New
+Route::get('/Tasks-Management/General', 'TaskController2@general')->name('task.general');
+Route::get('/ajax/get-department-of-project', 'TaskController2@ajaxDfromP');
+Route::get('/ajax/get-tasks-of-project', 'TaskController2@ajaxTfromP');
+Route::get('/ajax/task-status-change', 'TaskController2@ajaxTSC');
+Route::get('/Tasks-Management/General/Department/{did}/Comment', 'TaskController2@departmentComment')->name('department.comment');
+Route::get('/Tasks-Management/General/Department/Comment/{cid}/reply', 'TaskController2@departmentReply')->name('department.reply');
+Route::post('/Tasks-Management/General/Department/{did}/Comment/store', 'TaskController2@departmentCommentStore')->name('department.comment.store');
+Route::post('/Tasks-Management/General/Department/Reply/{cid}/store', 'TaskController2@departmentReplyStore')->name('department.reply.store');
+Route::get('/Tasks-Management/General/Department/{did}/Comment/edit/{cid}', 'TaskController2@departmentCommentEdit')->name('department.comment.edit');
+Route::get('/Tasks-Management/General/Department/Comment/reply/{rid}/edit', 'TaskController2@departmentReplyEdit')->name('department.reply.edit');
+Route::post('/Tasks-Management/General/Department/Comment/update/{cid}', 'TaskController2@departmentCommentUpdate')->name('department.comment.update');
+Route::post('/Tasks-Management/General/Department/Reply/update/{rid}', 'TaskController2@departmentReplyUpdate')->name('department.reply.update');
+Route::get('/Department/Comment/download/{cid}', 'TaskController2@departmentCommentDownload')->name('download.department.comment.file');
+Route::get('/Department/Reply/download/{rid}', 'TaskController2@departmentReplyDownload')->name('download.department.reply.file');
+Route::get('/Department/Comment/delete/{cid}', 'TaskController2@departmentCommentDelete')->name('department.comment.delete');
+Route::get('/Department/reply/delete/{rid}', 'TaskController2@departmentReplyDelete')->name('department.reply.delete');
+Route::get('/Tasks-Management/General/Task/{tid}/Comment', 'TaskController2@taskComment')->name('task.comment');
+Route::get('/Tasks-Management/General/Task/Comment/{cid}/reply', 'TaskController2@taskReply')->name('task.reply');
+Route::post('/Tasks-Management/General/Task/{tid}/Comment/store', 'TaskController2@taskCommentStore')->name('task.comment.store');
+Route::post('/Tasks-Management/General/task/Reply/{cid}/store', 'TaskController2@taskReplyStore')->name('task.reply.store');
+Route::get('/Tasks-Management/General/Task/Comment/edit/{cid}', 'TaskController2@taskCommentEdit')->name('task.comment.edit');
+Route::get('/Tasks-Management/General/Task/Comment/reply/{rid}/edit', 'TaskController2@taskReplyEdit')->name('task.reply.edit');
+Route::post('/Tasks-Management/General/Task/Comment/update/{cid}', 'TaskController2@taskCommentUpdate')->name('task.comment.update');
+Route::post('/Tasks-Management/General/task/Reply/update/{rid}', 'TaskController2@taskReplyUpdate')->name('task.reply.update');
+Route::get('/task/Comment/download/{cid}', 'TaskController2@taskCommentDownload')->name('download.task.comment.file');
+Route::get('/task/Reply/download/{rid}', 'TaskController2@taskReplyDownload')->name('download.task.reply.file');
+Route::get('/task/Comment/delete/{cid}', 'TaskController2@taskCommentDelete')->name('task.comment.delete');
+Route::get('/task/reply/{rid}', 'TaskController2@taskReplyDelete')->name('task.reply.delete');
+Route::get('/Tasks-Management/General/Submit-Report/{tid}', 'TaskController2@submitReport')->name('submit.report');
+Route::post('/Tasks-Management/General/Submit-Report/{tid}', 'TaskController2@submitReportStore')->name('submit.report.store');
+
+Route::get('/Tasks-Management/Project-Manager', 'TaskController3@projectManager')->name('task.project.manager');
+Route::get('/ajax/manager/get-tasks-of-project', 'TaskController3@ajaxMTfromP');
+Route::get('/ajax/manager/get-department-of-project', 'TaskController3@ajaxMDfromP');
+Route::post('/Tasks-Management/Project-Manager/Project/Store', 'TaskController3@projectStore')->name('project.store');
+Route::get('/ajax/manager/department_store', 'TaskController3@departmentStore');
+Route::post('/ajax/manager/task_store', 'TaskController3@taskStore')->name('task.store');
+Route::get('/Tasks-Management/Tak-details/{tid}', 'TaskController3@taskDetail')->name('task.detail');
 
 
+
+
+
+// Project Management
+Route::get('/Tasks/Index', 'TaskController@index')->name('task.index');
+Route::get('/Tasks/create-initial-project', 'TaskController@createInitialProject')->name('task.create.initial.project');
+Route::post('/Tasks/store-initial-project', 'TaskController@storeInitialProject')->name('task.store.initial.project');
+Route::get('/Project-View/{pid}', 'TaskController@ProjectView')->name('Project.View');
+Route::get('/Project-Delete/{pid}', 'TaskController@ProjectDelete')->name('project.delete');
+Route::get('/Report-View/{tid}', 'TaskController@viewReport')->name('view.report');
+Route::get('/download-Report-file/{tid}', 'TaskController@downloadReportFile')->name('download.report.file');
+Route::get('/task-reopen/{tid}', 'TaskController@taskReopen')->name('task.reopen');
+Route::get('/task-accept/{tid}', 'TaskController@taskAccept')->name('task.accept');
+Route::post('/Tasks/update-project-title/{pid}', 'TaskController@updateProjectTitle')->name('update.project.title');
+Route::post('/Tasks/update-task/{tid}/{did}/{pid}', 'TaskController@updateTask')->name('update.task');
+Route::post('/Tasks/store-task/{did}/{pid}', 'TaskController@storeTask')->name('store.task');
+Route::get('/Tasks-Submit-View/{tid}/{did}/{pid}', 'TaskController@taskSubmitView')->name('task.submit.view');
+Route::post('/Tasks-Submit-Store/{tid}/{did}/{pid}', 'TaskController@taskSubmitStore')->name('task.submit.store');
+Route::get('/Tasks/Index-For-Employee', 'TaskController@indexForEmployee')->name('task.index.employee');
+Route::get('/Tasks-View-Employee/{tid}', 'TaskController@taskViewEmployee')->name('task.view.employee');
+Route::get('/Project-View-Employee/{pid}', 'TaskController@ProjectViewEmployee')->name('Project.View.Employee');
+
+Route::post('/comment/task/store/{tid}', 'CommenttController@store')->name('commentt.store');
+Route::get('/comment-file-download/task/{cid}', 'CommenttController@downloadCommentFile')->name('download.commentt.file');
+Route::get('/comment-edit/task/{cid}', 'CommenttController@edit')->name('commentt.edit');
+Route::post('/comment-update/task/{cid}', 'CommenttController@update')->name('commentt.update');
+Route::get('/comment-delete/task/{cid}', 'CommenttController@destroy')->name('commentt.delete');
+Route::get('/reply-create/task/{cid}', 'ReplytController@create')->name('replyt.create');
+Route::post('/reply-store/task/{cid}/{tid}', 'ReplytController@store')->name('replyt.store');
+Route::get('/reply-file-download/task/{rid}', 'ReplytController@downloadReplyFile')->name('download.replyt.file');
+Route::get('/reply-edit/task/{rid}', 'ReplytController@edit')->name('replyt.edit');
+Route::post('/reply-update/task/{rid}', 'ReplytController@update')->name('replyt.update');
+Route::get('/reply-delete/task/{rid}', 'ReplytController@destroy')->name('replyt.delete');
 
 
 
@@ -414,6 +454,8 @@ Route::post('/Account-Close-Permanently', [
 ///
 
 Route::get('/user/{id}/cv', 'UserinfoController@cv')->name('user.cv');
+
+
 
 
 

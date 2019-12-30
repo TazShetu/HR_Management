@@ -36,10 +36,11 @@
                             <tr>
                                 <td>{{  $key + 1 }}</td>
                                 <td>{{ $warning->user->name }}</td>
-                                <td>{!! $warning->description !!}</td>
+                                <td id="description_{{$key}}">{!! $warning->description !!}</td>
                                 <td class="text-center">
                                     @if (!empty($warning->appeal))
-                                        <a href="{{ route('warning.appeal.show', $warning->id) }}" class="btn btn-info btn-sm">
+                                        <a href="{{ route('warning.appeal.show', $warning->id) }}"
+                                           class="btn btn-info btn-sm">
                                             View Appeal
                                         </a>
                                     @endif
@@ -47,6 +48,9 @@
                                        onclick="return confirm('Are you sure ?')">
                                         Reject Complain
                                     </a>
+                                    <button onclick="printT('description_{{$key}}')" class="btn btn-sm btn-info">
+                                        <i class="fa fa-print"></i>
+                                    </button>
                                 </td>
                             </tr>
                         @endforeach
@@ -67,6 +71,16 @@
     {{--    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-select.js')}}"></script>--}}
     {{--    <script type="text/javascript" src="{{asset('joli/js/plugins/tagsinput/jquery.tagsinput.min.js')}}"></script>--}}
     <!-- END THIS PAGE PLUGINS-->
+    <script>
+        function printT(el) {
+            var rp = document.body.innerHTML;
+            // $(".dn").addClass('d-none');
+            var pc = document.getElementById(el).innerHTML;
+            document.body.innerHTML = pc;
+            window.print();
+            document.body.innerHTML = rp;
+        }
+    </script>
 @endsection
 
 

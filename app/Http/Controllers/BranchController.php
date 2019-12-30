@@ -8,6 +8,7 @@ use App\Job;
 use App\Role;
 use App\Tax;
 use App\User;
+use App\Userassign;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -156,6 +157,7 @@ class BranchController extends Controller
                     $u->branch_id = 0;
                     $u->update();
                     $u->syncRoles([3]);
+                    Userassign::where('user_id', $u->id)->delete();
                     DB::commit();
                     $success = true;
                 } catch (\Exception $e) {

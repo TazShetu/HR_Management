@@ -57,7 +57,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="h6 text-uppercase mb-0">{{$t}}</h3>
-                                <h6>{{$n->branchTitle}}</h6>
+                                <h6>{{$n->branchTitle}} Branch, {{$n->type}}</h6>
                             </div>
                             <div class="card-body">
                                 {!! $n->notice !!}

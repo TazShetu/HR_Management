@@ -79,40 +79,36 @@ class PensionController extends Controller
                 // not active, make active
                 $p->is_gross_salary = 1;
                 $p->save();
-                $a = '<div class="alert alert-success text-center">
-                    Pension will be calculated only from Gross Salary !!
-                    </div>';
+                $a = 'Gross';
                 return $a;
             } else {
                 // active, need to deactivate
                 $p->is_gross_salary = 0;
                 $p->save();
-                $a = '<div class="alert alert-success text-center">
-                    Pension will be calculated from Total Salary !!
-                    </div>';
-                return $a;
-            }
-        } else {
-            abort(403);
-        }
-    }
-
-
-    public function isGrossTextAjax()
-    {
-        if (Auth::user()->can('pension')){
-            $p = Pension::find(1);
-            if (($p->is_gross_salary * 1) == 0){
                 $a = 'Total';
                 return $a;
-            }else {
-                $a = 'Gross';
-                return $a;
             }
         } else {
             abort(403);
         }
     }
+
+
+//    public function isGrossTextAjax()
+//    {
+//        if (Auth::user()->can('pension')){
+//            $p = Pension::find(1);
+//            if (($p->is_gross_salary * 1) == 0){
+//                $a = 'Total';
+//                return $a;
+//            }else {
+//                $a = 'Gross';
+//                return $a;
+//            }
+//        } else {
+//            abort(403);
+//        }
+//    }
 
 
     public function update(Request $request)

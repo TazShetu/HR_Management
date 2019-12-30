@@ -6,6 +6,7 @@ use App\User;
 use App\PrivateMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class PrivateMessageController extends Controller
 {
@@ -55,18 +56,12 @@ class PrivateMessageController extends Controller
 
     public function sentMessages()
     {
-        if (Auth::user()->can('communication_private')){
-            $sentItems = PrivateMessage::where('sender_id', Auth::id())->where('sent_item_delete', 0)->latest()->get();
-            $sentMessages = [];
-            foreach ($sentItems as $key => $value) {
-                $sentMessages[$key]['id'] = $value->id;
-                $sentMessages[$key]['receiver'] = User::find($value->receiver_id)->name;
-                $sentMessages[$key]['msg'] = $value->message_body;
-                $sentMessages[$key]['status'] = $value->status;
-                $sentMessages[$key]['date'] = $value->created_at;
-                $sentMessages[$key]['seenTime'] = $value->updated_at;
+        if (Auth::user()->can('communication_private')) {
+            $sentItems = PrivateMessage::where('sender_id', Auth::id())->where('sent_item_delete', 0)->latest()->paginate(10);
+            foreach ($sentItems as $s){
+                $s['receiver'] = User::find($s->receiver_id)->name;
             }
-            return view('private_message.sentMessages', compact('sentMessages'));
+            return view('private_message.sentMessages', compact('sentItems'));
         } else {
             abort(403);
         }
@@ -75,9 +70,9 @@ class PrivateMessageController extends Controller
 
     public function sentMessageShow($mid)
     {
-        if (Auth::user()->can('communication_private')){
+        if (Auth::user()->can('communication_private')) {
             $message = PrivateMessage::find($mid);
-            $sender = User::find($message->receiver_id)->name;
+            $sender = User::find($message->receiver_id);
             $sender_id = $message->sender_id;
             $msg = $message->message_body;
             $file = ($message->file) ?? '';
@@ -91,7 +86,7 @@ class PrivateMessageController extends Controller
 
     public function deleteSentMessage($mid)
     {
-        if (Auth::user()->can('communication_private')){
+        if (Auth::user()->can('communication_private')) {
             $pm = PrivateMessage::find($mid);
             if ($pm->inbox_item_delete == 1) {
                 if ($pm->file) {
@@ -102,7 +97,8 @@ class PrivateMessageController extends Controller
                 $pm->sent_item_delete = 1;
                 $pm->save();
             }
-            return redirect()->back();
+            Session::flash('success', "The Message has been Deleted Successfully !");
+            return redirect()->route('message.sent');
         } else {
             abort(403);
         }
@@ -111,7 +107,7 @@ class PrivateMessageController extends Controller
 
     public function downloadMessageFile($mid)
     {
-        if (Auth::user()->can('communication_private')){
+        if (Auth::user()->can('communication_private')) {
             $m = PrivateMessage::find($mid);
             $ext = pathinfo($m->file, PATHINFO_EXTENSION);
             $name = 'message_' . md5(time()) . '.' . $ext;
@@ -125,16 +121,11 @@ class PrivateMessageController extends Controller
     public function inbox()
     {
         if (Auth::user()->can('communication_private')) {
-            $messages = PrivateMessage::where('receiver_id', Auth::id())->where('inbox_item_delete', 0)->latest()->get();
-            $inboxMessages = [];
-            foreach ($messages as $key => $value) {
-                $inboxMessages[$key]['id'] = $value->id;
-                $inboxMessages[$key]['sender'] = User::find($value->sender_id)->name;
-                $inboxMessages[$key]['msg'] = $value->message_body;
-                $inboxMessages[$key]['created_at'] = $value->created_at;
-                $inboxMessages[$key]['file'] = $value->file;
+            $messages = PrivateMessage::where('receiver_id', Auth::id())->where('inbox_item_delete', 0)->latest()->paginate(10);
+            foreach ($messages as $value) {
+                $value['sender'] = User::find($value->sender_id)->name;
             }
-            return view('private_message.inboxMessages', compact('inboxMessages'));
+            return view('private_message.inboxMessages', compact('messages'));
         } else {
             abort(403);
         }
@@ -144,12 +135,12 @@ class PrivateMessageController extends Controller
     public function messageShow($mid)
     {
         if (Auth::user()->can('communication_private')) {
-            $message = PrivateMessage::find($mid)->where('inbox_item_delete', 0)->first();
+            $message = PrivateMessage::where('id', $mid)->where('inbox_item_delete', 0)->first();
             if ($message) {
                 $message->status = 'seen';
                 $message->save();
             }
-            $sender = User::find($message->sender_id)->name;
+            $sender = User::find($message->sender_id);
             $sender_id = $message->sender_id;
             $msg = $message->message_body;
             $file = ($message->file) ?? '';
@@ -183,7 +174,6 @@ class PrivateMessageController extends Controller
             abort(403);
         }
     }
-
 
 
     public function deleteInboxMessage($mid)

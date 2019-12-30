@@ -1,5 +1,20 @@
 @extends('layouts.joli')
 @section('title', 'Leave Application')
+@section('style')
+    <style>
+        #fromDate {
+            line-height: normal;
+            border: 1px solid #a9a9a9;
+            padding: 0px 7px;
+        }
+
+        #toDate {
+            line-height: normal;
+            border: none;
+            border-bottom: 1px dotted black;
+        }
+    </style>
+@endsection
 @section('breadcrumb')
     @php
         $menuU = Storage::disk('local')->get('menu');
@@ -39,10 +54,13 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">LEAVE APPLICATION FORM</h3>
+                        <button onclick="printT('PC')" class="btn btn-sm btn-outline-info float-right">
+                            <i class="fa fa-print"></i>
+                        </button>
                     </div>
                     {{--     Form Start              --}}
                     <form action="{{route('leave.application.submit', ['uid' => $user->id])}}" class="form-horizontal"
-                          method="post">
+                          method="post" id="PC">
                         @csrf
                         <div class="panel-body">
                             <div style="float: right;">Date: {{\Carbon\Carbon::now()->format('jS F Y')}}</div>
@@ -73,46 +91,50 @@
                             {{--                            <div class="container">--}}
                             <div class="row">
                                 <div class="col">
-                                    @foreach($lts as $lt)
-                                        <div class="form-check">
-                                            {{-- <input type="checkbox" name="leaveType[]" value="{{$lt->id}}">--}}
-                                            <label class="form-check-label mb-2"
-                                                   style="min-width: 70px;">{{$lt->type}}</label>
-                                            @php $x = 0; @endphp
-                                            @if ($lt->id != 1)
-                                                @if(count($leaves) > 0)
-                                                    @foreach($leaves as $leave)
-                                                        @if(($leave->leavetype_id * 1) == ($lt->id * 1))
-                                                            <span>
-                                                                <input type="number" name="days[]" min="1"
+                                    <table class="">
+                                        @foreach($lts as $lt)
+                                            <tr>
+                                                <th class="pr-2">{{$lt->type}}</th>
+                                                <td class="p-1">
+                                                    @php $x = 0; @endphp
+                                                    @if ($lt->id != 1)
+                                                        @if(count($leaves) > 0)
+                                                            @foreach($leaves as $leave)
+                                                                @if(($leave->leavetype_id * 1) == ($lt->id * 1))
+                                                                    <span>
+                                                                <input type="number" name="days[]" class="leave-days"
+                                                                       min="1"
                                                                        max="{{$maxLeavePerType - $leave->accepted_days}}">
                                                                 Remaining {{$maxLeavePerType - $leave->accepted_days}} days
                                                             </span>
-                                                            @php $x = 1; @endphp
-                                                            @break
-                                                        @endif
-                                                    @endforeach
-                                                    @if(($x * 1) != 1)
-                                                        <span>
-                                                            <input type="number" name="days[]" min="1"
+                                                                    @php $x = 1; @endphp
+                                                                    @break
+                                                                @endif
+                                                            @endforeach
+                                                            @if(($x * 1) != 1)
+                                                                <span>
+                                                            <input type="number" name="days[]" class="leave-days"
+                                                                   min="1"
                                                                    max="{{$maxLeavePerType}}">
                                                             Remaining {{$maxLeavePerType}} days
                                                         </span>
-                                                    @endif
-                                                @else
-                                                    <span>
-                                                        <input type="number" name="days[]" min="1"
+                                                            @endif
+                                                        @else
+                                                            <span>
+                                                        <input type="number" name="days[]" class="leave-days" min="1"
                                                                max="{{$maxLeavePerType}}">
                                                         Remaining {{$maxLeavePerType}} days
                                                     </span>
-                                                @endif
-                                            @elseif ($lt->id == 1)
-                                                <span>
-                                                    <input type="number" name="days[]" min="1">
+                                                        @endif
+                                                    @elseif ($lt->id == 1)
+                                                        <span>
+                                                    <input type="number" name="days[]" class="leave-days" min="1">
                                                 </span>
-                                            @endif
-                                        </div>
-                                    @endforeach
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </table>
                                 </div>
                             </div>
                             {{--                            </div>--}}
@@ -128,7 +150,7 @@
                             <div>{{ optional($job)->title}}</div>
                             <input type="hidden" name="today" value="{{\Carbon\Carbon::today()->format('Y-m-d')}}">
                         </div>
-                        <div class="panel-footer">
+                        <div class="panel-footer dn">
                             <a title="refresh" class="btn btn-default back" data-link="{{route('back')}}"><span
                                         class="fa fa-refresh"></span></a>
                             <button type="submit" class="btn btn-primary pull-right">Send</button>
@@ -177,16 +199,14 @@
                                         @endif
                                     </td>
                                     <td>
-                                        @if((($value->approveHR)*1) == 0 && (($value->approveDH)*1) == 0)
+                                        @if(((($value->approveHR)*1) == 0) && ((($value->approveDH)*1) == 0) && ((($value->rejectHR)*1) == 0) && ((($value->rejectDH)*1) == 0))
                                             <a href="{{ route('applied.leave.delete', $value->id) }}"
                                                class="btn btn-danger btn-sm"
                                                onclick="return confirm('Are you sure ?')">
                                                 <i class="fa fa-trash-o"></i>
                                             </a>
                                         @else
-                                            <a href="#"
-                                               class="btn btn-danger btn-sm disabled"
-                                               onclick="return confirm('Are you sure ?')">
+                                            <a href="javascript: void(0)" class="btn btn-danger btn-sm disabled">
                                                 <i class="fa fa-trash-o"></i>
                                             </a>
                                         @endif
@@ -203,6 +223,16 @@
 @endsection
 @section('script')
     <script>
+        function printT(el) {
+            var rp = document.body.innerHTML;
+            $(".dn").addClass('d-none');
+            var pc = document.getElementById(el).innerHTML;
+            document.body.innerHTML = pc;
+            window.print();
+            document.body.innerHTML = rp;
+        }
+    </script>
+    <script>
         // Write JS Here
         $(function () {
             function totalDays() {
@@ -216,7 +246,13 @@
                 // date2.setDate(date1.getDate() + totalDays);
                 date2.setDate(date1.getDate());
                 document.getElementById('toDate').value = date2.toISOString().slice(0, 10);
+                totalLeaveDays();
             }
+
+
+            $(document).on('keyup focusout change', '.leave-days', function () {
+                totalLeaveDays();
+            });
 
             {{--function checkS() {--}}
             {{--    var maxS = [];--}}
@@ -289,6 +325,32 @@
             //     checkE();
             // });
         });
+
+        function totalLeaveDays() {
+            let totalLeave = 0;
+            $('.leave-days').each(function (i, el) {
+                let elVal = el.value * 1;
+                if (elVal > 0) {
+                    totalLeave += elVal;
+                }
+            });
+            if (totalLeave > 0) {
+                $('#totalLeave').text(totalLeave);
+                $('#toDate').val(dateIncrease(totalLeave, $('#fromDate').val()));
+            }
+        }
+
+        function dateIncrease(days, date) {
+            let from = new Date(date);
+            let fromDate = from.getFullYear() + '-' + (from.getMonth() + 1) + '-' + from.getDate();
+            let _fromDate = new Date(fromDate);
+            let milliseconds = _fromDate.setDate(_fromDate.getDate() + days);
+            let time = new Date(milliseconds);
+            let _year = time.getFullYear();
+            let _month = time.getMonth() + 1;
+            let _date = time.getDate();
+            return _year + '-' + (_month < 10 ? '0' + _month : _month) + '-' + (_date < 10 ? '0' + _date : _date);
+        }
     </script>
 @endsection
 

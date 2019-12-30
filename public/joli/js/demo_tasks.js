@@ -24,9 +24,11 @@ $(function(){
             receive: function(event, ui) {
                 if(this.id == "tasks_completed"){
                     ui.item.addClass("task-complete").find(".task-footer > .pull-right").remove();
+                    // call ajax here
                 }
                 if(this.id == "tasks_progreess"){
                     ui.item.find(".task-footer").append('<div class="pull-right"><span class="fa fa-play"></span> 00:00</div>');
+                    // call ajax here
                 }                
                 page_content_onresize();
             }

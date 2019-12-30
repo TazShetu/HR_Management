@@ -243,8 +243,9 @@ class HomeController extends Controller
     }
 
 
-    public function test()
+    public function test(Request $request)
     {
+        dd($request->assign);
         return view('test');
     }
 }

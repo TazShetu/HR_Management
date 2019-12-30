@@ -23,7 +23,6 @@ class BonusController extends Controller
     public function index()
     {
         if (Auth::user()->can('bonus')) {
-            $bonus = Bonus::find(1);
             $religions = Religion::all();
             $employees = Employee::where('is_bonus', '1')->get();
             $users = [];

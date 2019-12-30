@@ -12,6 +12,20 @@
         <li>{{$menu[42]->display_name}}</li>
         <li class="active">{{$menu[45]->display_name}}</li>
     </ul>
+    <style>
+        .modal.in .modal-dialog {
+            z-index: 99999;
+        }
+
+        .form-horizontal .form-group {
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+        }
+
+        .modal-header .close {
+            margin-top: -9px !important;
+        }
+    </style>
 @endsection
 @section('pageTitle', 'Appeal')
 @section('content')
@@ -35,27 +49,88 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($warnings as $key => $warning)
+                        @forelse ($warnings as $key => $warning)
                             <tr>
                                 <td>{{ $key + 1 }}</td>
                                 <td>{!! $warning->description !!}</td>
                                 <td>
-                                    <a href="" data-toggle="modal" data-target="#modal_{{ $warning->id }}" class="@if (!empty($warning->appeal)) disabled @endif btn btn-success btn-sm">
+                                    <a href="" data-toggle="modal" data-target="#modal_{{ $warning->id }}"
+                                       class="@if (!empty($warning->appeal)) disabled @endif btn btn-success btn-sm">
                                         Appeal
                                     </a>
-{{--                                    <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal_basic_{{ $warning->id }}">Appeal]]</button>--}}
+
+                                    <div class="modal fade" id="modal_{{ $warning->id }}" tabindex="-1" role="dialog"
+                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Appeal</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ route('appeal.store') }}" class="form-horizontal"
+                                                          method="post" enctype="multipart/form-data">
+                                                        @csrf
+                                                        <input type="hidden" name="warning_id"
+                                                               value="{{ $warning->id }}">
+                                                        <div class="form-group">
+                                                            <textarea
+                                                                    class="form-control form-control-success {{$errors->has('appeal') ? 'has-error' : ''}}"
+                                                                    name="appeal" id="" cols="30" rows="20"
+                                                                    required></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary">Submit
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
                                     @if (!empty($warning->appeal) && ($warning->hearing_type == '0'))
                                         <span class="text-success">Already appealed</span><br>
                                     @endif
                                     @if ($warning->hearing_type != '0')
-                                        <button data-toggle="modal" data-target="#modal_{{ $warning->id.$warning->hearing_type }}" class="btn btn-warning btn-sm">{{ ucfirst($warning->hearing_type) }} Hearing</button>
+                                        <button data-toggle="modal"
+                                                data-target="#modal_{{ $warning->id.$warning->hearing_type }}"
+                                                class="btn btn-warning btn-sm">{{ ucfirst($warning->hearing_type) }}
+                                            Hearing
+                                        </button>
 
+                                        <div class="modal fade" id="modal_{{ $warning->id.$warning->hearing_type }}"
+                                             tabindex="-1" role="dialog"
+                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title"
+                                                            id="exampleModalLongTitle">{{ ucfirst($warning->hearing_type) }}
+                                                            Hearing</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        {!! $warning->hearing_message !!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     @endif
                                 </td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <tr>
+                                <td colspan="4" class="text-center">No warnings found!</td>
+                            </tr>
+                        @endforelse
                         </tbody>
                     </table>
                 </div>
@@ -66,55 +141,16 @@
 @section('modal')
     <!-- MODALS -->
     <!-- Modal -->
-    <div class="modal fade" id="modal_{{ $warning->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Appeal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{ route('appeal.store') }}" class="form-horizontal"
-                          method="post" enctype="multipart/form-data">
-                        @csrf
-                        <input type="hidden" name="warning_id" value="{{ $warning->id }}">
-                        <div class="form-group">
-                                                                <textarea class="form-control form-control-success {{$errors->has('appeal') ? 'has-error' : ''}}"
-                                                                          name="appeal" id="" cols="30" rows="20" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Modal -->
-    <div class="modal fade" id="modal_{{ $warning->id.$warning->hearing_type }}" tabindex="-1"      role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">{{ ucfirst($warning->hearing_type) }} Hearing</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    {!! $warning->hearing_message !!}
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- End MODALS -->
 @endsection
 @section('script')
     <!-- START THIS PAGE PLUGINS-->
     {{--    <script type='text/javascript' src='{{asset('joli/js/plugins/icheck/icheck.min.js')}}'></script>--}}
     {{--    <script type="text/javascript" src="{{asset('joli/js/demo_tables.js')}}"></script>--}}
-{{--        <script type='text/javascript' src='{{asset('joli/js/plugins/icheck/icheck.min.js')}}'></script>--}}
+    {{--        <script type='text/javascript' src='{{asset('joli/js/plugins/icheck/icheck.min.js')}}'></script>--}}
     {{--    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-datepicker.js')}}"></script>--}}
     {{--    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-file-input.js')}}"></script>--}}
     {{--    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-select.js')}}"></script>--}}

@@ -90,6 +90,7 @@
                 @else
                 &copy; 2020 European IT
                 @endif
+                >> Dummy User Email: a@g.com Password: 123456
             </div>
         </div>
     </div>

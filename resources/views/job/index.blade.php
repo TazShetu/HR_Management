@@ -151,13 +151,13 @@
                                 <td>{{$j->provident}} %</td>
                                 <td class="text-right">
                                     <a href="{{route('job.edit', ['jid' => $j->id])}}"
-                                       class="btn btn-sm btn-success"><i class="fa fa-pencil"></i></a>
+                                       class="btn btn-sm btn-success m-1"><i class="fa fa-pencil"></i></a>
                                     @if(($j->is_supervisor * 1) == 0)
                                         <a href="{{route('job.delete', ['jid' => $j->id])}}"
-                                           class="btn btn-sm btn-danger"
+                                           class="btn btn-sm btn-danger m-1"
                                            onclick="return confirm('Are you sure ?')"><i class="fa fa-trash-o"></i></a>
                                     @else
-                                        <a href="#" class="btn btn-sm btn-danger disabled"
+                                        <a href="#" class="btn btn-sm btn-danger disabled m-1"
                                            onclick="return confirm('Are you sure ?')"><i class="fa fa-trash-o"></i></a>
                                     @endif
                                 </td>

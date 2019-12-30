@@ -44,7 +44,7 @@ class UsersTableSeeder extends Seeder
 //            'job_id' => 4,
             'job_id' => 3,
             'name' => 'qqq',
-            'email' => 'q@g.come',
+            'email' => 'q@g.com',
             'password' => bcrypt('123456'),
             'ip_address' => '127.0.0.1',
             'fatal_warning' => 0,

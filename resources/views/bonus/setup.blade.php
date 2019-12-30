@@ -1,5 +1,14 @@
 @extends('layouts.joli')
 @section('title', 'Bonus Setup')
+@section('style')
+    <style>
+        @media (min-width: 767px) {
+            .gt {
+                margin-left: -3vw !important;
+            }
+        }
+    </style>
+@endsection
 @section('breadcrumb')
     @php
         $menuU = Storage::disk('local')->get('menu');
@@ -57,9 +66,12 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 col-xs-12 control-label">Only Gross Salary</label>
-                                <div class="col-md-6 col-xs-12" style="margin-top: 7px;">
+                                <div class="col-md-1 col-xs-12" style="margin-top: 7px;">
                                     <input type="checkbox" name="isGross" style="transform: scale(1.5);"
                                             {{ (($bonus->is_gross * 1) == 1 ) ? "checked" : "" }}>
+                                </div>
+                                <div class="col-md-8">
+                                    <small class="help-block gt">Gross salary unchecked represents to total salary.</small>
                                 </div>
                             </div>
                             <div class="form-group">

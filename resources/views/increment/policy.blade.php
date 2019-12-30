@@ -37,7 +37,7 @@
                             <p>Below
                                 <input type="number" step="0.01" min="1" max="100" name="below" value="{{$ip->below}}"
                                        style="max-width: 60px;" required>% of KPI target will get no increment.</p>
-                            <p>Below <span id="below">{{$ip->below}}</span>% of KPI target to KPI target will get
+                            <p> <span id="below">{{$ip->below}}</span>% of KPI target to KPI target will get
                                 <input type="number" step="0.01" min="1" max="100" name="increment_1"
                                        value="{{$ip->increment_1}}"
                                        style="max-width: 60px;" required>%
@@ -65,7 +65,7 @@
                             <hr>
                             <input type="checkbox" name="is_KPI"
                                    {{ (($ip->is_kpi * 1) == 1 ) ? "checked" : "" }} style="transform: scale(1.6);">
-                            &nbsp;&nbsp;User without KPI assigment will get No Increment.
+                            &nbsp;&nbsp;<b>User without KPI assigment will get No Increment.</b>
                     </div>
                     <div class="panel-footer">
                         <a title="refresh" class="btn btn-default back" data-link="{{route('back')}}"><span
