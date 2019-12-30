@@ -85,10 +85,10 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($warnings as $warning)
+                        @foreach ($warnings as $i => $warning)
                             <tr>
                                 <td>{{ $warning->user->name }}</td>
-                                <td>{!! $warning->description !!}</td>
+                                <td id="description_{{$i}}">{!! $warning->description !!}</td>
                                 <td class="text-right">
                                     <a href="{{ route('warning.forward', $warning->id) }}"
                                        class="btn btn-info btn-sm pl-2 pr-2">
@@ -99,6 +99,9 @@
                                        onclick="return confirm('Are you sure ?')">
                                         Reject
                                     </a>
+                                    <button onclick="printT('description_{{$i}}')" class="btn btn-sm btn-info">
+                                        <i class="fa fa-print"></i>
+                                    </button>
                                 </td>
                             </tr>
                         @endforeach
@@ -119,6 +122,16 @@
     {{--    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-select.js')}}"></script>--}}
     {{--    <script type="text/javascript" src="{{asset('joli/js/plugins/tagsinput/jquery.tagsinput.min.js')}}"></script>--}}
     <!-- END THIS PAGE PLUGINS-->
+    <script>
+        function printT(el) {
+            var rp = document.body.innerHTML;
+            // $(".dn").addClass('d-none');
+            var pc = document.getElementById(el).innerHTML;
+            document.body.innerHTML = pc;
+            window.print();
+            document.body.innerHTML = rp;
+        }
+    </script>
 @endsection
 
 {{--@include('includes.bubbly.header')--}}

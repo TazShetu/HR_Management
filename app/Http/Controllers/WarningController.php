@@ -32,6 +32,7 @@ class WarningController extends Controller
         ]);
         $warning = new Warning;
         $warning->branch_id = Auth::user()->branch_id;
+        $warning->disputer = Auth::id();
         $warning->user_id = $request->name;
         $warning->department_id = null;
         $warning->description = $request->warningDescription;
@@ -61,6 +62,7 @@ class WarningController extends Controller
             ]);
             $warning = new Warning();
             $warning->branch_id = Auth::user()->branch_id;
+            $warning->disputer = Auth::id();
             $warning->user_id = $request->name;
             $warning->department_id = null;
             $warning->description = $request->warningDescription;

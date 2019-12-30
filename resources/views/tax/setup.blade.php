@@ -30,6 +30,10 @@
             border-color: #6c757d !important;
         }
 
+        #loader {
+            display: none;
+        }
+
     </style>
 @endsection
 @section('breadcrumb')

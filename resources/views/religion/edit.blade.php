@@ -20,7 +20,7 @@
                     <h3 class="panel-title">Religion Name Edit</h3>
                 </div>
                 {{--     Form Start              --}}
-                <form action="{{route('religion.store')}}" class="form-horizontal" method="post">
+                <form action="{{route('religion.update', ['rid' => $redit->id])}}" class="form-horizontal" method="post">
                     @csrf
                     <div class="panel-body">
                         <div class="form-group">

@@ -28,6 +28,7 @@
                             <a href="{{route('unselect.applicant', ['aid' => $a->id])}}"
                                class="btn btn-sm btn-danger">Unselect</a>
                         @endif
+                        <span class="float-right text-secondary">You can not edit applicant*</span>
                     </div>
                         <div class="panel-body">
                             <div class="form-group">

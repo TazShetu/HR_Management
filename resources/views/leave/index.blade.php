@@ -159,9 +159,9 @@
     <!-- END THIS PAGE PLUGINS-->
     <script>
         $(function () {
-            $("#mlpt").change((e) => {
+            $("#mlpt").on("keyup change", e => {
                 document.getElementById('mltp_btn').disabled = false;
-            });
+            })
         });
     </script>
 @endsection

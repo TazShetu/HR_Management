@@ -142,7 +142,7 @@
                                 <div class="col-md-6 col-xs-12">
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                        <input type="text" value="{{$u->name}}" name="name" required
+                                        <input type="text" value="{{$user->name}}" name="name" required
                                                value="{{old('name')}}"
                                                class="form-control {{$errors->has('name') ? 'is-invalid' : ''}}">
                                     </div>

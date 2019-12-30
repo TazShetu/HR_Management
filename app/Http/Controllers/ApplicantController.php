@@ -31,6 +31,7 @@ class ApplicantController extends Controller
         foreach ($notices as $n) {
             $n['jobTitle'] = Job::find($n->job_id)->title;
             $n['branchTitle'] = Branch::find($n->branch_id)->title;
+            $n['type'] = EmployeeType::find($n->employeeType_id)->type;
             $n['is_applied'] = 0;
             foreach ($jobs as $j){
                 if ($j->id == $n->id){
@@ -56,6 +57,7 @@ class ApplicantController extends Controller
         }
         $n = Notice::find($nid);
         $n['branchTitle'] = Branch::find($n->branch_id)->title;
+        $n['type'] = EmployeeType::find($n->employeeType_id)->type;
         $n['is_applied'] = 0;
         foreach ($jobs as $j){
             if ($j->id == $n->id){

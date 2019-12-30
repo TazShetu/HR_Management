@@ -31,6 +31,7 @@ class NoticeController extends Controller
                 foreach ($notices as $n) {
                     $n['jobTitle'] = Job::find($n->job_id)->title;
                     $n['branchTitle'] = Branch::find($n->branch_id)->title;
+                    $n['type'] = EmployeeType::find($n->employeeType_id)->type;
                 }
             }
             return view('notice.index', compact('notices', 'jobs', 'branches', 'es'));
@@ -107,8 +108,10 @@ class NoticeController extends Controller
     {
         if (Auth::user()->can('circular')) {
             $n = Notice::find($nid);
-            $t = Job::find($n->job_id)->title;
-            return view('notice/view', compact('n', 't'));
+            $n['title'] = Job::find($n->job_id)->title;
+            $n['branchTitle'] = Branch::find($n->branch_id)->title;
+            $n['type'] = EmployeeType::find($n->employeeType_id)->type;
+            return view('notice/view', compact('n'));
         } else {
             abort(403);
         }

@@ -97,6 +97,9 @@ class LeaveController extends Controller
                                 if ((($lt->id * 1) != 1) && $leave && (($maxLeavePerType * 1) < (($leave->accepted_days * 1) + ($d * 1)))) {
                                     Session::flash('MESS', "Please Do Not Mess With The Original Code !!!");
                                     return redirect()->back();
+                                } elseif ((($lt->id * 1) != 1) && (($maxLeavePerType * 1) < (($d * 1)))){
+                                    Session::flash('MESS', "Please Do Not Mess With The Original Code !!!");
+                                    return redirect()->back();
                                 }
                                 for ($x = 1; $x <= $d; $x++) {
                                     $a = date('Y-m-d', strtotime($request->fromDate . '+' . $IiI . ' days'));

@@ -13,12 +13,15 @@
         #pension .off {
             border-color: #6c757d !important;
         }
+
         .myClass .toggle {
             width: 124px !important;
         }
+
         .myClass .off {
             border-color: #6c757d !important;
         }
+
         .panel .panel-title {
             float: none;
         }
@@ -91,7 +94,10 @@
                                                    class="form-control {{$errors->has('totalPay') ? 'is-invalid' : ''}}">
                                             <span class="input-group-addon add-on">
                                                 Months of
-                                                <span>&nbsp;<b id="Gross">{{ (($p->is_gross_salary * 1) == 1 ) ? "Gross" : "Total" }}</b>&nbsp;</span>
+                                                <span>&nbsp;<b id="Gross">
+                                                        {{ (($p->is_gross_salary * 1) == 1 ) ? "Gross" : "Total" }}
+                                                    </b>
+                                                    &nbsp;</span>
                                                 Salary
                                             </span>
                                         </div>
@@ -105,7 +111,8 @@
                                     <div class="col-md-6 col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                            <input type="number" value="{{$p->salary_percentage}}" name="salaryPercentage"
+                                            <input type="number" value="{{$p->salary_percentage}}"
+                                                   name="salaryPercentage"
                                                    required min="0" max="100" step="0.01"
                                                    class="form-control {{$errors->has('salaryPercentage') ? 'is-invalid' : ''}}">
                                             <span class="input-group-addon add-on">%</span>
@@ -117,12 +124,20 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-3 col-xs-12 control-label">Only Gross Salary</label>
-                                    <div class="col-md-6 col-xs-12 myClass" style="margin-top: 7px;">
-                                        <input id="is_gross" type="checkbox" data-on="Gross Salary" data-off="Total Salary"
-                                               {{ (($p->is_gross_salary * 1) == 1 ) ? "checked" : "" }} data-toggle="toggle"
-                                               data-onstyle="success" data-offstyle="outline-secondary"
-                                               name="is_gross" value="1">
+                                    {{--                                    <label class="col-md-3 col-xs-12 control-label">Only Gross Salary</label>--}}
+                                    <label class="col-md-3 col-xs-12 control-label">Salary Type</label>
+                                    <div class="col-md-6 col-xs-12 myClass">
+                                        {{--                                        <input id="is_gross" type="checkbox" data-on="Gross Salary"--}}
+                                        {{--                                               data-off="Total Salary"--}}
+                                        {{--                                               {{ (($p->is_gross_salary * 1) == 1 ) ? "checked" : "" }} data-toggle="toggle"--}}
+                                        {{--                                               data-onstyle="success" data-offstyle="outline-secondary"--}}
+                                        {{--                                               name="is_gross" value="1">--}}
+                                        <select id="is_gross"  class="form-control">
+                                            <option value="gross" {{ (($p->is_gross_salary * 1) == 1 ) ? "selected" : "" }}>Gross</option>
+                                            <option value="total" {{ (($p->is_gross_salary * 1) == 1 ) ? "" : "selected" }}>Total</option>
+                                        </select>
+
+
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -130,7 +145,8 @@
                                     <div class="col-md-6 col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                            <input type="number" value="{{$p->max_withdraw_percentage}}" name="maxWithdrawal"
+                                            <input type="number" value="{{$p->max_withdraw_percentage}}"
+                                                   name="maxWithdrawal"
                                                    required min="0" max="100" step="0.01"
                                                    class="form-control {{$errors->has('maxWithdrawal') ? 'is-invalid' : ''}}">
                                             <span class="input-group-addon add-on">%</span>
@@ -146,7 +162,8 @@
                                     <div class="col-md-6 col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                            <input type="number" value="{{$p->per_month_withdraw_percentage}}" name="perMonthWithdrawal"
+                                            <input type="number" value="{{$p->per_month_withdraw_percentage}}"
+                                                   name="perMonthWithdrawal"
                                                    required min="0" max="100" step="0.01"
                                                    class="form-control {{$errors->has('perMonthWithdrawal') ? 'is-invalid' : ''}}">
                                             <span class="input-group-addon add-on">%</span>
@@ -171,8 +188,10 @@
                                         <label class="col-md-3 col-xs-12 control-label">Company Pay</label>
                                         <div class="col-md-6 col-xs-12">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                <input type="number" value="{{$p->company_pay_percentage}}" name="companyPay"
+                                                <span class="input-group-addon"><span
+                                                            class="fa fa-pencil"></span></span>
+                                                <input type="number" value="{{$p->company_pay_percentage}}"
+                                                       name="companyPay"
                                                        required min="0" max="100" step="0.01"
                                                        class="form-control {{$errors->has('companyPay') ? 'is-invalid' : ''}}">
                                                 <span class="input-group-addon add-on">%</span>
@@ -231,19 +250,11 @@
                     e.stopPropagation();
                 }
             });
-            $("#is_gross").next().on("click", (e) => {
+            // $("#is_gross").next().on("change", (e) => {
+            $("#is_gross").on("change", (e) => {
                 if (confirm('Are you sure ?')) {
                     $.ajax({
                         url: '/Pension/is_gross',
-                        method: "GET",
-                        success: function (r) {
-                            if (r != '') {
-                                $("#is_Gross").html(r);
-                            }
-                        }
-                    });
-                    $.ajax({
-                        url: '/Pension/is_gross_text',
                         method: "GET",
                         success: function (r) {
                             if (r != '') {
@@ -251,6 +262,15 @@
                             }
                         }
                     });
+                    // $.ajax({
+                    //     url: '/Pension/is_gross_text',
+                    //     method: "GET",
+                    //     success: function (r) {
+                    //         if (r != '') {
+                    //             $("#Gross").html(r);
+                    //         }
+                    //     }
+                    // });
                 } else {
                     e.stopPropagation();
                 }

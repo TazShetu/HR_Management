@@ -59,6 +59,9 @@ class MenusTableSeeder extends Seeder
             48 => ['kpi', 'KPI', 'Key Performance Indicator', 0],
             49 => ['KPI_Setup', 'Setup', 'Setup menu under KPI', 1],
             50 => ['KPI_Calculate', 'Calculate', 'Calculate menu under KPI', 1],
+            51 => ['Task_Management', 'Task Management', 'Task Management', 0],
+            52 => ['Task_Management_Project_Manager', 'Project Manager', 'Project Manager menu under Task Management', 1],
+            53 => ['Task_Management_General', 'General', 'General menu under Task Management', 1],
         ];
 
         foreach ($ms as $m){
