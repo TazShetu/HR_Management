@@ -10,7 +10,7 @@
     @endphp
     <ul class="breadcrumb">
         <li><a href="{{route('circular')}}">{{$menu[16]->display_name}}</a></li>
-        <li class="active">{{$t}}</li>
+        <li class="active">{{$n->title}}</li>
     </ul>
 @endsection
 @section('pageTitle', 'Circular View')
@@ -29,9 +29,11 @@
             <div class="col-md-8">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">{{$t}}</h3>
+                        <h3 class="panel-title">{{$n->title}}</h3>
                     </div>
                     <div class="panel-body">
+                        <b>{{$n->branchTitle}} Branch, {{$n->type}}</b>
+                        <hr>
                         {!! $n->notice !!}
                     </div>
                 </div>

@@ -93,7 +93,7 @@
                         <h3 class="panel-title">Create Circular</h3>
                     </div>
                     {{--     Form Start              --}}
-                    <form action="{{route('circular.store')}}" class="form-horizontal" method="post">
+                    <form action="{{route('notice.update', ['nid' => $nedit->id])}}" class="form-horizontal" method="post">
                         @csrf
                         <div class="panel-body">
                             <div class="form-group">
@@ -170,7 +170,7 @@
                         <div class="panel-footer">
                             <a title="refresh" class="btn btn-default back" data-link="{{route('back')}}"><span
                                         class="fa fa-refresh"></span></a>
-                            <button class="btn btn-primary pull-right">Create</button>
+                            <button class="btn btn-primary pull-right">Update</button>
                         </div>
                     </form>
                     {{--     Form end               --}}
@@ -189,6 +189,27 @@
     {{--        <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-select.js')}}"></script>--}}
     {{--    <script type="text/javascript" src="{{asset('joli/js/plugins/tagsinput/jquery.tagsinput.min.js')}}"></script>--}}
     <!-- END THIS PAGE PLUGINS-->
+    <script>
+        function noticeDelete(nid) {
+            if (nid != '') {
+                $.ajax({
+                    url: ("{{ route('total.applied.user', 'nid') }}").replace('nid', nid),
+                    method: "GET",
+                    success: function (res) {
+                        if (res > 0) {
+                            if (confirm("This notice has '" + res + "' applicants. Are you sure to force delete ?")) {
+                                window.location.href = ("{{ route('notice.delete', 'nid') }}").replace('nid', nid);
+                            }
+                        } else {
+                            if (confirm("Are you sure?")) {
+                                window.location.href = ("{{ route('notice.delete', 'nid') }}").replace('nid', nid);
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    </script>
 @endsection
 
 {{--@include('includes.bubbly.header')--}}

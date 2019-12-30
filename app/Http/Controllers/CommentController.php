@@ -52,23 +52,6 @@ class CommentController extends Controller
     }
 
 
-    public function index()
-    {
-        //
-    }
-
-
-    public function create()
-    {
-        //
-    }
-
-
-    public function show(Comment $comment)
-    {
-        //
-    }
-
 
     public function edit($cid, $did, $pid)
     {

@@ -40,7 +40,7 @@ class ReplygController extends Controller
                     $r['user_image'] = $u->image;
                 }
             }
-            return view('comment_global/reply', compact('c', 'tags', 'users', 'replies'));
+            return view('comment_global.reply', compact('c', 'tags', 'users', 'replies'));
         } else {
             abort(403);
         }
@@ -91,7 +91,7 @@ class ReplygController extends Controller
     {
         if (Auth::user()->can('communication_global')){
             $reply = Replyg::find($rid);
-            return view('comment_global/editReply', compact('reply'));
+            return view('comment_global.editReply', compact('reply'));
         } else {
             abort(403);
         }

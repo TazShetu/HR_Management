@@ -7,6 +7,8 @@ use App\Warning;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+
 
 class WarningController extends Controller
 {
@@ -30,10 +32,12 @@ class WarningController extends Controller
         ]);
         $warning = new Warning;
         $warning->branch_id = Auth::user()->branch_id;
+        $warning->disputer = Auth::id();
         $warning->user_id = $request->name;
         $warning->department_id = null;
         $warning->description = $request->warningDescription;
         $warning->save();
+        Session::flash('ComplainSuccess', "Your Complain has been sent to the Department Head");
         return redirect()->back();
     }
 
@@ -57,11 +61,14 @@ class WarningController extends Controller
                 'warningDescription' => 'required'
             ]);
             $warning = new Warning();
+            $warning->branch_id = Auth::user()->branch_id;
+            $warning->disputer = Auth::id();
             $warning->user_id = $request->name;
             $warning->department_id = null;
             $warning->description = $request->warningDescription;
             $warning->approveDH = 1;
             $warning->save();
+            Session::flash('ComplainSuccess', "Your Complain has been sent successfully.");
             return redirect()->back();
         } else {
             abort(403);
@@ -97,6 +104,9 @@ class WarningController extends Controller
         return view('warning.appealCreate', [
             'warnings' => Warning::where('user_id', Auth::id())->where('approveDH', 1)->get()
         ]);
+//        return view('test', [
+//            'warnings' => Warning::where('user_id', Auth::id())->where('approveDH', 1)->get()
+//        ]);
     }
 
 

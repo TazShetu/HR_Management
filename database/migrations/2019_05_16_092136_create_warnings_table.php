@@ -19,6 +19,7 @@ class CreateWarningsTable extends Migration
             $table->text('appeal')->nullable();
             $table->string('hearing_type')->default(0);
             $table->text('hearing_message')->nullable();
+            $table->text('disputer');
             $table->timestamps();
         });
     }

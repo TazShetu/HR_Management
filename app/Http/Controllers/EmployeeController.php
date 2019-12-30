@@ -235,7 +235,8 @@ class EmployeeController extends Controller
             $rs = Role::all();
             $ets = EmployeeType::all();
             $rss = Religion::all();
-            return view('employee.editForm', compact('es', 'e', 'rs', 'ets', 'rss'));
+//            dd($e->role->id);
+            return view('employee.editForm', compact('es', 'e', 'rs', 'ets', 'rss', 'eu'));
         } else {
             abort(403);
         }
@@ -268,7 +269,7 @@ class EmployeeController extends Controller
             try {
                 $e = Employee::find($eid);
                 $u = User::find($e->user_id);
-                if ($e->email != $request->email) {
+                if ($u->email != $request->email) {
                     $request->validate([
                         'email' => 'unique:users,email|unique:applicants,email',
                     ]);
@@ -317,7 +318,7 @@ class EmployeeController extends Controller
             }
             if ($success) {
                 Session::flash('EmployeeUpdateSuccess', "The Employee '$request->name' has been updated successfully.");
-                return redirect()->route('employee.create');
+                return redirect()->route('employee.edit.dummy', ['eid' => $eid]);
             } else {
                 Session::flash('unsuccess', "Something went wrong :(");
                 return redirect()->back();

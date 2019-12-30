@@ -30,7 +30,7 @@
             border-color: #6c757d !important;
         }
 
-        #pension .toggle .toggle-group label{
+        #pension .toggle .toggle-group label {
             line-height: 16px !important;
         }
     </style>
@@ -76,8 +76,6 @@
                     <div class="tabs">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab19" data-toggle="tab">Edit Slab</a></li>
-                            <li><a href="#tab20" data-toggle="tab">Default</a></li>
-                            <li><a href="#tab21" data-toggle="tab">Which Salary</a></li>
                         </ul>
                         <div class="panel-body tab-content">
                             <div class="tab-pane active" id="tab19">
@@ -124,7 +122,7 @@
                                                     <span class="input-group-addon"><i
                                                                 class="glyphicon glyphicon-usd"></i></span>
                                                     <input type="number" min="1" name="to" required
-                                                           value="{{$tedit->from}}"
+                                                           value="{{$tedit->to}}"
                                                            class="form-control {{$errors->has('to') ? 'is-invalid' : ''}}">
                                                 </div>
                                                 @if($errors->has('to'))
@@ -157,61 +155,6 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="tab-pane" id="tab20">
-                                {{--     Default Form will Go here                       --}}
-                                <form action="{{route('tax.default.update')}}" class="form-horizontal" method="post">
-                                    @csrf
-                                    <div class="panel-body tax-form-body">
-                                        <div class="form-group">
-                                            <label class="col-md-3 col-xs-12 control-label">Maximum Tax %</label>
-                                            <div class="col-md-6 col-xs-12">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><i
-                                                                class="glyphicon glyphicon-usd"></i></span>
-                                                    <input type="number" min="1" max="100" name="maxTax" required
-                                                           value="{{$max_tax}}"
-                                                           class="form-control {{$errors->has('maxTax') ? 'is-invalid' : ''}}">
-                                                </div>
-                                                @if($errors->has('maxTax'))
-                                                    <span class="help-block text-danger">{{$errors->first('maxTax')}}</span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 col-xs-12 control-label">Default Tax %</label>
-                                            <div class="col-md-6 col-xs-12">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><i
-                                                                class="glyphicon glyphicon-usd"></i></span>
-                                                    <input type="number" min="0" max="100" name="defaultTax" required
-                                                           value="{{$default_tax}}"
-                                                           class="form-control {{$errors->has('defaultTax') ? 'is-invalid' : ''}}">
-                                                </div>
-                                                @if($errors->has('defaultTax'))
-                                                    <span class="help-block text-danger">{{$errors->first('defaultTax')}}</span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel-footer">
-                                        <a title="refresh" class="btn btn-default back"
-                                           data-link="{{route('back')}}"><span
-                                                    class="fa fa-refresh"></span></a>
-                                        <button class="btn btn-primary pull-right">Update</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="tab-pane" id="tab21">
-                                {{--     Is_Gross btn will Go here                       --}}
-                                <form action="{{route('tax.isGross')}}" class="form-horizontal" method="post"
-                                      id="pension" style="margin-left: 100px; margin-top: 70px;">
-                                    @csrf
-                                    <input id="is_pension" type="checkbox"
-                                           {{ (($isGross * 1) == 1 ) ? "checked" : "" }}
-                                           data-toggle="toggle" data-on="Gross Salary" data-off="Total Salary" value="1"
-                                           data-onstyle="success" data-offstyle="outline-secondary" name="tax_is_gross">
-                                </form>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -225,9 +168,8 @@
             <div class="panel panel-default tabs">
                 <ul class="nav nav-tabs" role="tablist">
                     @foreach($branches as $i => $b)
-                        <li class="{{ ($b->title == $tedit->title) ? "" : "active" }}"><a href="#{{$b->title}}"
-                                                                                          role="tab"
-                                                                                          data-toggle="tab">{{$b->title}}</a>
+                        <li class="{{ ($b->title == $tedit->title) ? "active" : "" }}">
+                            <a href="#{{$b->title}}" role="tab" data-toggle="tab">{{$b->title}}</a>
                         </li>
                     @endforeach
                 </ul>

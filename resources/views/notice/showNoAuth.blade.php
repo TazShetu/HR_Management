@@ -71,7 +71,7 @@
                                         <th>#</th>
                                         <th>Circular</th>
                                         <th>Branch</th>
-                                        {{--<th>Details</th>--}}
+                                        <th>Type</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -81,6 +81,7 @@
                                             <th scope="row">{{$i + 1}}</th>
                                             <td>{{$n->jobTitle}}</td>
                                             <td>{{$n->branchTitle}}</td>
+                                            <td>{{$n->type}}</td>
                                             <td>
                                                 @if($n->is_applied == 0)
                                                     <a href="{{route('notice.view.noAuth', ['nid' => $n->id])}}"

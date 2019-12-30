@@ -161,7 +161,7 @@ class CommentgController extends Controller
                     $ru->update();
                 }
             }
-            return view('comment_global/reply', compact('c', 'tags', 'users', 'replies'));
+            return view('comment_global.reply', compact('c', 'tags', 'users', 'replies'));
         } else {
             abort(403);
         }
@@ -172,7 +172,7 @@ class CommentgController extends Controller
     {
         if (Auth::user()->can('communication_global')){
             $c = Commentg::find($cid);
-            return view('comment_global/edit', compact('c'));
+            return view('comment_global.edit', compact('c'));
         } else {
             abort(403);
         }

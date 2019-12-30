@@ -36,10 +36,6 @@
                 <div class="alert alert-success text-center">
                     {{session('success')}}
                 </div>
-            @elseif(session('EmployeeSelectSuccess'))
-                <div class="alert alert-success text-center">
-                    {{session('EmployeeSelectSuccess')}}
-                </div>
             @elseif(session('NoApplicant'))
                 <div class="alert alert-warning text-center">
                     {{session('NoApplicant')}}
@@ -57,7 +53,7 @@
                                 <th class="text-center">#</th>
                                 <th class="text-center">Job</th>
                                 <th class="text-center">Branch</th>
-                                {{--<th>Details</th>--}}
+                                <th class="text-center">Type</th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>
@@ -67,6 +63,7 @@
                                     <th class="text-center">{{$i + 1}}</th>
                                     <td class="text-center">{{$n->jobTitle}}</td>
                                     <td class="text-center">{{$n->branchTitle}}</td>
+                                    <td class="text-center">{{$n->type}}</td>
                                     <td class="text-center">
                                         <a href="{{route('notice.applicant.view', ['nid' => $n->id])}}"
                                            class="btn btn-sm btn-warning mb-1">Applicant</a>
@@ -195,6 +192,28 @@
 {{--        <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-select.js')}}"></script>--}}
     {{--    <script type="text/javascript" src="{{asset('joli/js/plugins/tagsinput/jquery.tagsinput.min.js')}}"></script>--}}
     <!-- END THIS PAGE PLUGINS-->
+    <script>
+        function noticeDelete(nid) {
+            console.log('ff');
+            if (nid != '') {
+                $.ajax({
+                    url: ("{{ route('total.applied.user', 'nid') }}").replace('nid', nid),
+                    method: "GET",
+                    success: function (res) {
+                        if (res > 0) {
+                            if (confirm("This notice has '" + res + "' applicants. Are you sure to force delete ?")) {
+                                window.location.href = ("{{ route('notice.delete', 'nid') }}").replace('nid', nid);
+                            }
+                        } else {
+                            if (confirm("Are you sure?")) {
+                                window.location.href = ("{{ route('notice.delete', 'nid') }}").replace('nid', nid);
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    </script>
 @endsection
 
 
