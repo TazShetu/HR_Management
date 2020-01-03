@@ -26,11 +26,11 @@ class TaskController3 extends Controller
             $departments = null;
             $tasks = null;
             $projects = Project::where('branch_id', Auth::user()->branch_id)->get();
-            if ($projects->count() > 0) {
+            if (count($projects) > 0) {
                 $departments = Department::where('project_id', $projects[0]->id)->get();
-            }
-            if ($departments) {
-                $tasks = Task::where('department_id', $departments[0]->id)->get();
+                if (count($departments) > 0) {
+                    $tasks = Task::where('department_id', $departments[0]->id)->get();
+                }
             }
             $users = User::where('branch_id', Auth::user()->branch_id)->get();
             foreach ($users as $u) {
@@ -145,6 +145,13 @@ class TaskController3 extends Controller
                 $d->project_id = $pid;
                 $d->title = $title;
                 $d->save();
+                $ps = Project::all();
+                if (count($ps) == 1){
+                    $ds = Department::where('project_id', $pid)->get();
+                    if (count($ds) == 1){
+                        $check = 2;
+                    }
+                }
                 return $check;
             } else {
                 return $check;
@@ -173,7 +180,7 @@ class TaskController3 extends Controller
                 $ua->task_id = $t->id;
                 $ua->save();
             }
-            return 1;
+            return '1';
         } else {
             return json_encode(['success' => false]);
         }
@@ -183,7 +190,67 @@ class TaskController3 extends Controller
     public function taskDetail($tid)
     {
         $task = Task::find($tid);
-        return view('taskNew.project_manager.task', compact('task'));
+        $users = User::where('branch_id', Auth::user()->branch_id)->get();
+        $ausers = Userassign::where('task_id', $tid)->get();
+        foreach ($users as $u) {
+            $n = explode(' ', $u->name);
+            $u['title'] = end($n);
+            $u['assign'] = 0;
+            foreach ($ausers as $au){
+                if (($au->user_id * 1) == ($u->id * 1)){
+                    $u['assign'] = 1;
+                    break;
+                }
+            }
+        }
+        return view('taskNew.project_manager.task', compact('task', 'users', 'ausers'));
+    }
+
+
+    public function taskDetailUpdate(Request $request, $tid)
+    {
+        $request->validate([
+            'title' => 'required',
+            'deadline' => 'required',
+            'remark' => 'required',
+            'assign' => 'required',
+//            'priority' => 'required',
+        ]);
+        if (Auth::user()->can('project_manager')) {
+            DB::beginTransaction();
+            try {
+                $t = Task::find($tid);
+                $t->title = $request->title;
+                $t->deadline = $request->deadline;
+                $t->remark = $request->remark;
+                $t->update();
+                Userassign::where('task_id', $tid)->delete();
+                $pid = $t->project_id;
+                $did = $t->department_id;
+                foreach ($request->assign as $a) {
+                    $ua = new Userassign;
+                    $ua->user_id = $a;
+                    $ua->project_id = $pid;
+                    $ua->department_id = $did;
+                    $ua->task_id = $tid;
+                    $ua->save();
+                }
+                DB::commit();
+                $success = true;
+            } catch (\Exception $e) {
+                $success = false;
+                DB::rollback();
+            }
+            if ($success) {
+                Session::flash('success', "The task has been updated successfully.");
+                return redirect()->back();
+            } else {
+                Session::flash('unsuccess', "Something went wrong :(");
+                return redirect()->back();
+            }
+        } else {
+            abort(403);
+        }
     }
 
 

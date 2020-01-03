@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e72726-c4db-46b1-a7b4-128c721acd4e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/role/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/role/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginApplicantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginApplicantController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController3.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/joli/js/plugins/bootstrap/bootstrap-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/joli/js/plugins/bootstrap/bootstrap-select.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partial/joli/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partial/joli/navigation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/taskNew/project_manager/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/taskNew/project_manager/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/taskNew/project_manager/task.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/taskNew/project_manager/task.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,32 +25,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3192">
-              <caret line="133" column="50" selection-start-line="133" selection-start-column="50" selection-end-line="133" selection-end-column="50" />
+            <state relative-caret-position="413">
+              <caret line="300" column="101" selection-start-line="300" selection-start-column="101" selection-end-line="300" selection-end-column="119" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/role/index.blade.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TaskController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="101" column="141" selection-start-line="101" selection-start-column="141" selection-end-line="101" selection-end-column="141" />
+            <state relative-caret-position="24">
+              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
               <folding>
-                <element signature="e#5405#5496#0#HTML" expanded="true" />
-                <element signature="e#5542#5637#0#HTML" expanded="true" />
-                <element signature="e#5683#5778#0#HTML" expanded="true" />
-                <element signature="e#5824#5920#0#HTML" expanded="true" />
-                <element signature="e#5966#6062#0#HTML" expanded="true" />
-                <element signature="e#6616#6707#0#HTML" expanded="true" />
-                <element signature="e#6753#6848#0#HTML" expanded="true" />
-                <element signature="e#6894#6989#0#HTML" expanded="true" />
-                <element signature="e#7035#7131#0#HTML" expanded="true" />
-                <element signature="e#7177#7273#0#HTML" expanded="true" />
+                <element signature="e#40#56#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TaskController3.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="244" column="32" lean-forward="true" selection-start-line="244" selection-start-column="32" selection-end-line="244" selection-end-column="39" />
+              <folding>
+                <element signature="e#40#59#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/taskNew/project_manager/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="59" column="11" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/taskNew/project_manager/task.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10">
+              <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -61,16 +88,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>project.store</find>
-      <find>.filter-option</find>
-      <find>department.store</find>
-      <find>task.store</find>
-      <find>task.detail</find>
-      <find>route</find>
-      <find>route(</find>
-      <find>Leave</find>
-      <find>circular.store</find>
-      <find>total.applied.user</find>
       <find>Dummy User Email: a@g.com</find>
       <find>update</find>
       <find>pension.update</find>
@@ -91,6 +108,16 @@
       <find>print</find>
       <find>printT</find>
       <find>complain/create</find>
+      <find>ajaxMDfromP</find>
+      <find>assign to</find>
+      <find>/ajax/manager/get-department-of-project</find>
+      <find>task.store</find>
+      <find>/Tasks-Management/Project-Manager</find>
+      <find>create-task</find>
+      <find>applicant.dummy.1</find>
+      <find>task_deadline</find>
+      <find>task.detail.update</find>
+      <find>$request-&gt;v</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,10 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/taskNew/general/comment/reply/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/includes/joli/department_comment/replies.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/taskNew/general/task_comment/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/taskNew/general/task_comment/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/taskNew/general/task_comment/reply/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/includes/joli/task_comment/replies.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/taskNew/general/task_comment/reply/edit.blade.php" />
@@ -112,13 +135,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_07_02_095620_create_tasks_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TaskController2.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/public/joli/js/plugins/bootstrap/bootstrap-select.js" />
-        <option value="$PROJECT_DIR$/resources/views/taskNew/project_manager/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TaskController3.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LeaveController.php" />
         <option value="$PROJECT_DIR$/resources/views/notice/edit.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/taskNew/project_manager/task.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/attendance/attendanceEditAdmin.blade.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" />
         <option value="$PROJECT_DIR$/resources/views/warning/appealCreate.blade.php" />
@@ -150,6 +168,15 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_05_16_092136_create_warnings_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WarningController.php" />
         <option value="$PROJECT_DIR$/resources/views/role/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/role/edit.blade.php" />
+        <option value="$PROJECT_DIR$/public/joli/js/plugins/bootstrap/bootstrap-select.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginApplicantController.php" />
+        <option value="$PROJECT_DIR$/resources/views/taskNew/project_manager/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/partial/joli/navigation.blade.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TaskController3.php" />
+        <option value="$PROJECT_DIR$/resources/views/taskNew/project_manager/task.blade.php" />
       </list>
     </option>
   </component>
@@ -275,8 +302,81 @@
         <subPane>
           <expand>
             <path>
-              <item name="HR_Management" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HR_Management" type="462c0819:PsiDirectoryNode" />
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="partial" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="partial" type="462c0819:PsiDirectoryNode" />
+              <item name="joli" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="role" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="taskNew" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HR" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="taskNew" type="462c0819:PsiDirectoryNode" />
+              <item name="project_manager" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -492,13 +592,16 @@
       <workItem from="1577078989967" duration="4470000" />
       <workItem from="1577161108785" duration="5793000" />
       <workItem from="1577683269583" duration="11911000" />
-      <workItem from="1577715652140" duration="613000" />
-      <workItem from="1577762860992" duration="3362000" />
+      <workItem from="1577773368014" duration="8073000" />
+      <workItem from="1577856830229" duration="13254000" />
+      <workItem from="1577941729951" duration="3168000" />
+      <workItem from="1577963303507" duration="1422000" />
+      <workItem from="1578035257523" duration="1776000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1726338000" />
+    <option name="totallyTimeSpent" value="1750056000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -510,10 +613,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984756" visible="true" weight="0.15884861" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984756" visible="true" weight="0.16364606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5015244" side_tool="true" weight="0.15884861" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -564,28 +667,43 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/routes/web.php</url>
-          <line>155</line>
-          <option name="timeStamp" value="53" />
+          <url>file://$PROJECT_DIR$/resources/views/pension/index.blade.php</url>
+          <line>470</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/pension/index.blade.php</url>
-          <line>174</line>
+          <line>471</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/pension/index.blade.php</url>
+          <line>534</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/pension/index.blade.php</url>
+          <line>254</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/pension/index.blade.php</url>
+          <line>131</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/pension/index.blade.php</url>
-          <line>178</line>
+          <line>135</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/WarningController.php</url>
-          <line>115</line>
+          <line>105</line>
           <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/WarningController.php</url>
-          <line>113</line>
+          <line>103</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -595,7 +713,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/PrivateMessageController.php</url>
-          <line>23</line>
+          <line>22</line>
           <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -614,24 +732,34 @@
           <option name="timeStamp" value="162" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/taskNew/project_manager/index.blade.php</url>
-          <line>173</line>
-          <option name="timeStamp" value="342" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/taskNew/project_manager/task.blade.php</url>
           <line>30</line>
           <option name="timeStamp" value="345" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php</url>
-          <line>56</line>
+          <line>59</line>
           <option name="timeStamp" value="347" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php</url>
-          <line>63</line>
+          <line>60</line>
           <option name="timeStamp" value="348" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/taskNew/project_manager/task.blade.php</url>
+          <line>132</line>
+          <option name="timeStamp" value="349" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/taskNew/project_manager/task.blade.php</url>
+          <line>130</line>
+          <option name="timeStamp" value="350" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/taskNew/project_manager/task.blade.php</url>
+          <line>111</line>
+          <option name="timeStamp" value="351" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/joli/js/demo_tasks.js</url>
@@ -640,97 +768,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/joli/js/demo_tasks.js</url>
-          <line>32</line>
+          <line>30</line>
           <option name="timeStamp" value="165" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/joli/js/plugins/bootstrap/bootstrap-select.js</url>
-          <line>993</line>
+          <line>1053</line>
           <option name="timeStamp" value="331" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2969">
-          <caret line="248" column="28" lean-forward="true" selection-start-line="248" selection-start-column="28" selection-end-line="248" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LeaveController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/notice/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="788">
-          <caret line="211" column="13" selection-start-line="211" selection-start-column="13" selection-end-line="211" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/attendance/attendanceEditAdmin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2832">
-          <caret line="118" column="11" selection-start-line="118" selection-start-column="11" selection-end-line="118" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="43" />
-          <folding>
-            <element signature="e#46#59#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/warning/appealCreate.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2328">
-          <caret line="97" column="42" lean-forward="true" selection-start-line="97" selection-start-column="42" selection-end-line="97" selection-end-column="42" />
-          <folding>
-            <element signature="e#3103#3110#1#HTML" expanded="true" />
-            <element signature="e#6613#6620#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="88" column="35" lean-forward="true" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="35" />
-          <folding>
-            <element signature="e#1017#1085#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/increment/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1368" />
@@ -813,13 +862,6 @@
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/taskNew/project_manager/task.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2424">
-          <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -910,7 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TaskController3.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BranchController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="491">
@@ -946,16 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
           <caret line="62" column="50" lean-forward="true" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApplicantController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
-          <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1025,29 +1056,135 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TaxController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3192">
-          <caret line="133" column="50" selection-start-line="133" selection-start-column="50" selection-end-line="133" selection-end-column="50" />
+        <state relative-caret-position="144">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/joli/js/plugins/bootstrap/bootstrap-select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24000">
+          <caret line="1000" column="35" lean-forward="true" selection-start-line="1000" selection-start-column="35" selection-end-line="1000" selection-end-column="35" />
+          <folding>
+            <element signature="e#82#89#1" expanded="true" />
+            <element signature="e#171#177#1" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/role/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="101" column="141" selection-start-line="101" selection-start-column="141" selection-end-line="101" selection-end-column="141" />
+        <state relative-caret-position="-240">
+          <caret line="181" column="37" selection-start-line="181" selection-start-column="37" selection-end-line="181" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/role/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1156">
+          <caret line="169" column="98" selection-start-line="169" selection-start-column="98" selection-end-line="169" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApplicantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1128">
+          <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
           <folding>
-            <element signature="e#5405#5496#0#HTML" expanded="true" />
-            <element signature="e#5542#5637#0#HTML" expanded="true" />
-            <element signature="e#5683#5778#0#HTML" expanded="true" />
-            <element signature="e#5824#5920#0#HTML" expanded="true" />
-            <element signature="e#5966#6062#0#HTML" expanded="true" />
-            <element signature="e#6616#6707#0#HTML" expanded="true" />
-            <element signature="e#6753#6848#0#HTML" expanded="true" />
-            <element signature="e#6894#6989#0#HTML" expanded="true" />
-            <element signature="e#7035#7131#0#HTML" expanded="true" />
-            <element signature="e#7177#7273#0#HTML" expanded="true" />
+            <element signature="e#40#58#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2544">
+          <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Applicant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding>
+            <element signature="e#66#106#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginApplicantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1272">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="e#45#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partial/joli/navigation.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="59" column="22" lean-forward="true" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TaskController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding>
+            <element signature="e#40#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/taskNew/project_manager/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="59" column="11" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="161" column="27" lean-forward="true" selection-start-line="156" selection-start-column="10" selection-end-line="174" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TaskController3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="244" column="32" lean-forward="true" selection-start-line="244" selection-start-column="32" selection-end-line="244" selection-end-column="39" />
+          <folding>
+            <element signature="e#40#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/taskNew/project_manager/task.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10">
+          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="300" column="101" selection-start-line="300" selection-start-column="101" selection-end-line="300" selection-end-column="119" />
         </state>
       </provider>
     </entry>

@@ -87,12 +87,6 @@
                                                  style="margin-left: 10px;"
                                                  @elseif($m->level == 1)
                                                  style="margin-left: 40px;"
-                                                 @elseif($m->level == 2)
-                                                 style="margin-left: 70px;"
-                                                 @elseif($m->level == 3)
-                                                 style="margin-left: 100px;"
-                                                 @elseif($m->level == 4)
-                                                 style="margin-left: 130px;"
                                                     @endif
                                             >
                                                 <input class="form-check-input" type="checkbox" {{ (($m->id * 1) == 1) ? 'checked disabled' : '' }} id="{{$m->name}}">
@@ -104,12 +98,6 @@
                                                  style="margin-left: 10px;"
                                                  @elseif($m->level == 1)
                                                  style="margin-left: 40px;"
-                                                 @elseif($m->level == 2)
-                                                 style="margin-left: 70px;"
-                                                 @elseif($m->level == 3)
-                                                 style="margin-left: 100px;"
-                                                 @elseif($m->level == 4)
-                                                 style="margin-left: 130px;"
                                                     @endif
                                             >
                                                 <input class="form-check-input" type="checkbox" value="{{$m->id}}"

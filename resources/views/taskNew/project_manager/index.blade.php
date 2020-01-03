@@ -61,15 +61,7 @@
 @section('pageTitle', 'Task Management')
 @section('content')
     <div class="row">
-{{--        @if(session('success'))--}}
-{{--            <div class="alert alert-success text-center">--}}
-{{--                {{session('success')}}--}}
-{{--            </div>--}}
-{{--        @elseif(session('unsuccess'))--}}
-{{--            <div class="alert alert-danger text-center">--}}
-{{--                {{session('unsuccess')}}--}}
-{{--            </div>--}}
-{{--        @endif--}}
+        {{--  Session notification is coming from toaster      --}}
         <div class="col">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -112,6 +104,7 @@
                                     <h4>Add new Department:</h4>
                                     {{--                                <form action="{{route('department.store', ['pid' => $projects[0]->id])}}" method="post" id="department_form">--}}
                                     {{--                                    @csrf--}}
+                                    {{--     Data is saved using ajax         --}}
                                     <textarea class="form-control push-down-10" rows="1"
                                               placeholder="Department Name" id="department_title"
                                               pid="{{$projects[0]->id}}"></textarea>
@@ -122,7 +115,7 @@
                             <div class="form-group">
                                 <h4>Departments:</h4>
                                 <div class="list-group border-bottom" id="departments">
-                                    @if($departments)
+                                    @if($departments && (count($departments) > 0))
                                         @foreach($departments as $i => $d)
                                             <a href="javascript:void(0)"
                                                class="list-group-item departments {{ ($i == 0) ? "active" : "" }}"
@@ -140,7 +133,7 @@
                             <div class="form-group">
                                 <h4>Tasks:</h4>
                                 <div class="list-group border-bottom" id="tasks">
-                                    @if($tasks)
+                                    @if($tasks && (count($tasks) > 0))
                                         @foreach($tasks as $i => $t)
                                             <div class="project-inner-area">
                                                 <a href="{{route('task.detail', ['tid' => $t->id])}}"
@@ -165,12 +158,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            @if((count($projects)  > 0) && $departments)
+                        <div class="col-md-3" id="create-task">
+                            @if((count($projects)  > 0) && $departments  && (count($departments) > 0))
                                 <div class="form-group">
                                     <h4>Add new task:</h4>
                                     {{--                                <form action="{{route('test')}}" method="post">--}}
                                     {{--                                    @csrf--}}
+                                    {{--     Data is saved using ajax         --}}
                                     <input type="text" id="task_title" class="form-control mb-1"
                                            placeholder="Task Title">
                                     <input type="text" id="task_deadline" class="form-control datepicker mb-1"
@@ -193,10 +187,11 @@
                                                 <ul class="dropdown-menu inner selectpicker" role="menu"
                                                     style="max-height: 388px; overflow-y: auto; min-height: 119px;">
                                                     @foreach($users as $i => $u)
-                                                        <li rel="{{$i}}" class=""><a tabindex="0" class=""
-                                                                                     style=""><span
-                                                                        class="text">{{$u->title}}</span><i
-                                                                        class="glyphicon glyphicon-ok icon-ok check-mark"></i></a>
+                                                        <li rel="{{$i}}" class="">
+                                                            <a tabindex="0" class="" style="">
+                                                                <span class="text">{{$u->title}}</span>
+                                                                <i class="glyphicon glyphicon-ok icon-ok check-mark"></i>
+                                                            </a>
                                                         </li>
                                                     @endforeach
                                                 </ul>
@@ -255,6 +250,11 @@
                         $("#departments").slideUp(1, e => {
                             $("#departments").html(r).slideDown('slow');
                         });
+                        if (r != 'No Department to show') {
+                            $("#create-task").css("display", "block");
+                        } else {
+                            $("#create-task").css("display", "none");
+                        }
                     }
                 });
                 // ajax call to change tasks
@@ -282,7 +282,9 @@
                         method: "GET",
                         data: {pid: pid, title: dTitle},
                         success: function (r) {
-                            if (r == '1') {
+                            if (r == '2') {
+                                location.reload();
+                            } else if (r == '1') {
                                 $.ajax({
                                     url: '/ajax/manager/get-department-of-project',
                                     method: "GET",
@@ -297,10 +299,11 @@
                             }
                         }
                     });
+                    $("#create-task").css("display", "block");
                 }
             });
 
-            $("#add_task_btn").on('click',  e => {
+            $("#add_task_btn").on('click', e => {
                 var pid = $("#add_task_btn").attr('pid');
                 var did = $("#add_task_btn").attr('did');
                 var title = $('#task_title').val();
@@ -321,7 +324,7 @@
                             did: did,
                         },
                         success: function (r) {
-                            if (r == '1'){
+                            if (r == '1') {
                                 $.ajax({
                                     url: '/ajax/manager/get-tasks-of-project',
                                     method: "GET",
@@ -334,6 +337,7 @@
                                 });
                                 $("#task_title").val('');
                                 $("#task_details").val('');
+                                $("#task_deadline").val('');
                             }
                         }
                     });

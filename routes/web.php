@@ -298,6 +298,7 @@ Route::post('/Tasks-Management/Project-Manager/Project/Store', 'TaskController3@
 Route::get('/ajax/manager/department_store', 'TaskController3@departmentStore');
 Route::post('/ajax/manager/task_store', 'TaskController3@taskStore')->name('task.store');
 Route::get('/Tasks-Management/Tak-details/{tid}', 'TaskController3@taskDetail')->name('task.detail');
+Route::post('/Tasks-Management/Tak-details/{tid}/update', 'TaskController3@taskDetailUpdate')->name('task.detail.update');
 
 
 
