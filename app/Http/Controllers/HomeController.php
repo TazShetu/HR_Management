@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Employee;
 use App\Job;
+use App\Menu;
+use App\Office;
+use App\Religion;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
@@ -22,7 +26,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        if (Auth::user()->job_id && Job::find(Auth::user()->job_id)){
+        Storage::disk('local')->put('menu', Menu::all());
+        Storage::disk('local')->put('office', Office::find(1));
+        if (Auth::user()->job_id && Job::find(Auth::user()->job_id)) {
             Storage::disk('local')->put('job_title', Job::find(Auth::user()->job_id)->title);
         } else {
             Storage::disk('local')->put('job_title', 'General User');
@@ -248,4 +254,106 @@ class HomeController extends Controller
         dd($request->assign);
         return view('test');
     }
+
+
+    public function personalInfo($uid)
+    {
+        $e = Employee::where('user_id', $uid)->first();
+        if (($uid == Auth::id()) && $e) {
+            $user = User::find($uid);
+            $e['religion'] = Religion::find($e->religion_id)->name;
+            $rss = Religion::all();
+            return view('personal_info.index', compact('user', 'e', 'rss'));
+        } else {
+            abort(403);
+        }
+    }
+
+
+    public function personalInfoUpdate(Request $request, $uid)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'fathersName' => 'required',
+            'mothersName' => 'required',
+            'dateOfBirth' => 'required',
+            'religion' => 'required',
+            'mobile' => 'required',
+            'nationality' => 'required',
+            'aboutMe' => 'required',
+            'address' => 'required',
+            'education' => 'required',
+            'employment' => 'required',
+            'skills' => 'required',
+            'languagess' => 'required',
+            'reference' => 'required',
+        ]);
+        $u = User::find($uid);
+        if ($u->email != $request->email) {
+            $request->validate([
+                'email' => 'unique:users,email|unique:applicants,email',
+            ]);
+        }
+        if ($request->filled('password')) {
+            $request->validate([
+                'password' => 'required|confirmed',
+            ]);
+        }
+        DB::beginTransaction();
+        try {
+            $u->name = $request->name;
+            $u->email = $request->email;
+            if ($request->filled('password')) {
+                $u->password = bcrypt($request->password);
+            }
+            if ($request->hasFile('image')) {
+                if ($u->image) {
+                    unlink($u->image);
+                }
+                $img = $request->image;
+                $img_name = time() . $img->getClientOriginalName();
+                $aa = $img->move('uploads/Users/Photo', $img_name);
+                $d = 'uploads/Users/Photo/' . $img_name;
+                $u->image = $d;
+            }
+            $u->update();
+            $e = Employee::where('user_id', $uid)->first();
+            $e->religion_id = $request->religion;
+            $e->dob = $request->dateOfBirth;
+            $e->FathersName = $request->fathersName;
+            $e->MothersName = $request->mothersName;
+            $e->mobile = $request->mobile;
+            $e->nationality = $request->nationality;
+            $e->about_me = $request->aboutMe;
+            $e->address = $request->address;
+            $e->education = $request->education;
+            $e->employment = $request->employment;
+            $e->skills = $request->skills;
+            $e->languages = $request->languagess;
+            $e->reference = $request->reference;
+            if ($request->hasFile('cv')) {
+                $img = $request->cv;
+                $img_name = time() . $img->getClientOriginalName();
+                $aa = $img->move('uploads/Users/cv', $img_name);
+                $d = 'uploads/Users/cv/' . $img_name;
+                $e->cv = $d;
+            }
+            $e->update();
+            DB::commit();
+            $success = true;
+        } catch (\Exception $e) {
+            $success = false;
+            DB::rollback();
+        }
+        if ($success) {
+            Session::flash('success', "Your Information has been updated successfully.");
+            return redirect()->back();
+        } else {
+            Session::flash('unsuccess', "Something went wrong :(");
+            return redirect()->back();
+        }
+    }
+
+
 }

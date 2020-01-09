@@ -14,7 +14,7 @@
     <!-- CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" id="theme"
           href="{{asset('bubbly/vendor/bootstrap/css/bootstrap.min.css')}}"/>
-    <link rel="stylesheet" type="text/css" id="theme" href="{{asset('joli/css/bootstrap/bootstrap.min.css')}}"/>
+{{--    <link rel="stylesheet" type="text/css" id="theme" href="{{asset('joli/css/bootstrap/bootstrap.min.css')}}"/>--}}
     @yield('link')
     <link rel="stylesheet" type="text/css" id="theme" href="{{asset('joli/css/theme-default.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('joli/css/custom.css')}}"/>
@@ -74,6 +74,7 @@
 <!-- END PRELOADS -->
 <!-- START SCRIPTS -->
 <!-- START PLUGINS -->
+{{--<script type="text/javascript" src="{{asset('js/admin.js')}}"></script>--}}
 <script type="text/javascript" src="{{asset('joli/js/plugins/jquery/jquery.min.js')}}"></script>
 <script>
     $(window).on('load', function () {

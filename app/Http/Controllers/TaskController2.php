@@ -33,23 +33,25 @@ class TaskController2 extends Controller
         $departments = [];
         $tasks = null;
         $j = 0;
-        foreach ($us as $u) {
-            $projects[] = Project::find($u[0]->project_id);
-            if ($j == 0) {
-                // get only the departments where user has assigned jobs
-                $uss = Userassign::where('user_id', Auth::id())->where('project_id', $u[0]->project_id)->get()->groupBy('department_id');
-                $jj = 0;
-                foreach ($uss as $uu) {
-                    $departments[] = Department::find($uu[0]->department_id);
-                    if ($jj == 0) {
-                        $tasks = Task::where('project_id', $u[0]->project_id)->where('department_id', $uu[0]->department_id)->get();
+        if (count($us) > 0){
+            foreach ($us as $u) {
+                $projects[] = Project::find($u[0]->project_id);
+                if ($j == 0) {
+                    // get only the departments where user has assigned jobs
+                    $uss = Userassign::where('user_id', Auth::id())->where('project_id', $u[0]->project_id)->get()->groupBy('department_id');
+                    $jj = 0;
+                    foreach ($uss as $uu) {
+                        $departments[] = Department::find($uu[0]->department_id);
+                        if ($jj == 0) {
+                            $tasks = Task::where('project_id', $u[0]->project_id)->where('department_id', $uu[0]->department_id)->get();
+                        }
+                        $jj++;
                     }
-                    $jj++;
                 }
+                $j++;
             }
-            $j++;
         }
-        if ($tasks != null) {
+        if ($tasks && (count($tasks) > 0)) {
             foreach ($tasks as $t) {
                 // add dependencies
 //                $t['can_submit'] = 1;

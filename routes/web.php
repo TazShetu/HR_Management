@@ -1,7 +1,8 @@
 <?php
 
 Route::get('/', function () {
-    return view('welcome');
+//    return view('welcome');
+    return redirect()->route('login');
 });
 
 Auth::routes();
@@ -17,6 +18,8 @@ Route::get('/t', function (){
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/refresh', 'ApplicantController@back')->name('back');
 
+Route::get('/personal-info/{uid}', 'HomeController@personalInfo')->name('personal.info');
+Route::post('/personal-info/{uid}', 'HomeController@personalInfoUpdate')->name('personal.info.update');
 
 Route::get('/permission-setup', 'AclController@permission')->name('permission');
 Route::get('/permission-edit/{pid}', 'AclController@permissionEdit')->name('permission.edit');
@@ -299,6 +302,9 @@ Route::get('/ajax/manager/department_store', 'TaskController3@departmentStore');
 Route::post('/ajax/manager/task_store', 'TaskController3@taskStore')->name('task.store');
 Route::get('/Tasks-Management/Tak-details/{tid}', 'TaskController3@taskDetail')->name('task.detail');
 Route::post('/Tasks-Management/Tak-details/{tid}/update', 'TaskController3@taskDetailUpdate')->name('task.detail.update');
+Route::get('/Tasks-Management/Tak-details/{tid}/submit-file-download', 'TaskController3@downloadTaskFile')->name('downloadTaskFile');
+Route::get('/task-accept-2/{tid}', 'TaskController3@taskAccept')->name('task.accept2');
+Route::get('/task-reopen-2/{tid}', 'TaskController3@taskReopen')->name('task.reopen2');
 
 
 

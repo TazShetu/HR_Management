@@ -69,12 +69,14 @@
             <div class="form-group">
                 <h4>Projects:</h4>
                 <div class="list-group border-bottom">
-                    @foreach($projects as $i => $p)
+                    @forelse($projects as $i => $p)
                         <a href="javascript:void(0)" class="list-group-item projects {{ ($i == 0) ? "active" : "" }}"
                            pid="{{$p->id}}">
                             <span class="fa fa-circle text-secondary"></span> {{$p->title}}
                         </a>
-                    @endforeach
+                    @empty
+                        No Project to show
+                    @endforelse
                 </div>
             </div>
             <div class="form-group">
@@ -82,22 +84,22 @@
                 <h4>Departments:</h4>
                 <div class="list-group border-bottom">
                     <div class="all-departments" id="main-departments">
-                        @if($departments != null)
-                            @foreach($departments as $i => $d)
-                                <div class="project-inner-area">
-                                    <a href="javascript:void(0)"
-                                       class="list-group-item departments {{ ($i == 0) ? "active" : "" }}"
-                                       did="{{$d->id}}">
-                                        <span class="fa fa-circle text-success"></span> {{$d->title}}
-                                    </a>
-                                    <div class="pull-right">
-                                        <a href="{{route('department.comment', ['did' => $d->id])}}" target="_blank"
-                                           title="Department Comment"><span
-                                                    class="fa fa-comments"></span></a>
-                                    </div>
+                        @forelse($departments as $i => $d)
+                            <div class="project-inner-area">
+                                <a href="javascript:void(0)"
+                                   class="list-group-item departments {{ ($i == 0) ? "active" : "" }}"
+                                   did="{{$d->id}}">
+                                    <span class="fa fa-circle text-success"></span> {{$d->title}}
+                                </a>
+                                <div class="pull-right">
+                                    <a href="{{route('department.comment', ['did' => $d->id])}}" target="_blank"
+                                       title="Department Comment"><span
+                                                class="fa fa-comments"></span></a>
                                 </div>
-                            @endforeach
-                        @endif
+                            </div>
+                        @empty
+                            No Department to show
+                        @endforelse
                     </div>
                 </div>
             </div>
@@ -106,124 +108,137 @@
         <!-- START CONTENT FRAME BODY -->
         <div class="content-frame-body">
             <div class="row push-up-10" id="main-body">
-                <div class="col-md-4">
-                    <h3>To-do List</h3>
-                    <div class="tasks" id="tasks">
-                        @foreach($tasks as $t)
-                            @if(($t->progress * 1) == 0)
-                                <div class="task-item task-info cursor2">
-                                    <div class="task-text">
-                                        <p>{{$t->title}}</p>
-                                        {{$t->remark}}
-                                        @if($t->dependencies)
-                                            <br>
-                                            @foreach($t->dependencies as $td)
-                                                <a href="{{route('task.comment', ['tid' => $td->id])}}" target="_blank"
-                                                   title="Task Comment">{{$td->title}}</a>
-                                            @endforeach
-                                        @endif
-                                    </div>
-                                    <div class="task-footer" tid="{{$t->id}}">
-                                        <div class="pull-left"><span class="fa fa-clock-o"></span> {{$t->deadline}}
+
+
+                @if($tasks)
+                    <div class="col-md-4">
+                        <h3>To-do List</h3>
+                        <div class="tasks" id="tasks">
+                            @foreach($tasks as $t)
+                                @if(($t->progress * 1) == 0)
+                                    <div class="task-item task-info cursor2">
+                                        <div class="task-text">
+                                            <p>{{$t->title}}</p>
+                                            {{$t->remark}}
+                                            @if($t->dependencies)
+                                                <br>
+                                                @foreach($t->dependencies as $td)
+                                                    <a href="{{route('task.comment', ['tid' => $td->id])}}"
+                                                       target="_blank"
+                                                       title="Task Comment">{{$td->title}}</a>
+                                                @endforeach
+                                            @endif
                                         </div>
-                                        <div class="pull-right"><a href="{{route('task.comment', ['tid' => $t->id])}}"
-                                                                   target="_blank" title="Task Comment"><span
-                                                        class="fa fa-comments"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <h3>In Progress</h3>
-                    <div class="tasks" id="tasks_progreess">
-                        @foreach($tasks as $t)
-                            @if((($t->progress * 1) == 1) && (($t->submit * 1) == 0))
-                                <div class="task-item task-info cursor2">
-                                    <div class="task-text">
-                                        <p>{{$t->title}}</p>
-                                        {{$t->remark}}
-                                        @if($t->dependencies)
-                                            <br>
-                                            @foreach($t->dependencies as $td)
-                                                <a href="{{route('task.comment', ['tid' => $td->id])}}" target="_blank"
-                                                   title="Task Comment">{{$td->title}}</a>
-                                            @endforeach
-                                        @endif
-                                    </div>
-                                    <div class="task-footer" tid="{{$t->id}}">
-                                        <div class="pull-left"><span class="fa fa-clock-o"></span> {{$t->deadline}}
-                                        </div>
-                                        <div class="pull-right"><a href="{{route('task.comment', ['tid' => $t->id])}}"
-                                                                   target="_blank" title="Task Comment"><span
-                                                        class="fa fa-comments"></span></a>
+                                        <div class="task-footer" tid="{{$t->id}}">
+                                            <div class="pull-left"><span class="fa fa-clock-o"></span> {{$t->deadline}}
+                                            </div>
+                                            <div class="pull-right"><a
+                                                        href="{{route('task.comment', ['tid' => $t->id])}}"
+                                                        target="_blank" title="Task Comment"><span
+                                                            class="fa fa-comments"></span></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endif
-                        @endforeach
-                        <div class="task-drop push-down-10">
-                            <span class="fa fa-cloud"></span>
-                            Drag your task here to start working on it
+                                @endif
+                            @endforeach
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <h3>Completed</h3>
-                    <div class="tasks" id="tasks_completed">
-                        @foreach($tasks as $t)
-                            @if((($t->submit * 1) == 1) && (($t->submit_accept * 1) == 0))
-                                <div class="task-item task-warning task-complete cursor2">
-                                    <div class="task-text">
-                                        <p>{{$t->title}}</p>
-                                        {{$t->remark}}
-                                        @if($t->dependencies)
-                                            <br>
-                                            @foreach($t->dependencies as $td)
-                                                <a href="{{route('task.comment', ['tid' => $td->id])}}" target="_blank"
-                                                   title="Task Comment">{{$td->title}}</a>
-                                            @endforeach
-                                        @endif
-                                    </div>
-                                    <div class="task-footer" tid="{{$t->id}}">
-                                        <div class="pull-left"><span
-                                                    class="fa fa-clock-o"></span> {{$t->updated_at}}
+                    <div class="col-md-4">
+                        <h3>In Progress</h3>
+                        <div class="tasks" id="tasks_progreess">
+                            @foreach($tasks as $t)
+                                @if((($t->progress * 1) == 1) && (($t->submit * 1) == 0))
+                                    <div class="task-item task-info cursor2">
+                                        <div class="task-text">
+                                            <p>{{$t->title}}</p>
+                                            {{$t->remark}}
+                                            @if($t->dependencies)
+                                                <br>
+                                                @foreach($t->dependencies as $td)
+                                                    <a href="{{route('task.comment', ['tid' => $td->id])}}"
+                                                       target="_blank"
+                                                       title="Task Comment">{{$td->title}}</a>
+                                                @endforeach
+                                            @endif
                                         </div>
-                                        <div class="pull-right">
-                                            <a href="{{route('submit.report', ['tid' => $t->id])}}" target="_blank"
-                                               title="Submit Report"><i class="glyphicon glyphicon-envelope"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @elseif(($t->submit_accept * 1) == 1)
-                                <div class="task-item task-primary task-complete cursor">
-                                    <div class="duplicate-task-text">
-                                        <p>{{$t->title}}</p>
-                                        {{$t->remark}}
-                                        @if($t->dependencies)
-                                            <br>
-                                            @foreach($t->dependencies as $td)
-                                                <a href="{{route('task.comment', ['tid' => $td->id])}}" target="_blank"
-                                                   title="Task Comment">{{$td->title}}</a>
-                                            @endforeach
-                                        @endif
-                                    </div>
-                                    <div class="task-footer">
-                                        <div class="pull-left">
-                                            <span class="text-primary"><b>Accepted</b></span>
+                                        <div class="task-footer" tid="{{$t->id}}">
+                                            <div class="pull-left"><span class="fa fa-clock-o"></span> {{$t->deadline}}
+                                            </div>
+                                            <div class="pull-right"><a
+                                                        href="{{route('task.comment', ['tid' => $t->id])}}"
+                                                        target="_blank" title="Task Comment"><span
+                                                            class="fa fa-comments"></span></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endif
-                        @endforeach
-                        <div class="task-drop">
-                            <span class="fa fa-cloud"></span>
-                            Drag your task here to finish it
+                                @endif
+                            @endforeach
+                            <div class="task-drop push-down-10">
+                                <span class="fa fa-cloud"></span>
+                                Drag your task here to start working on it
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-md-4">
+                        <h3>Completed</h3>
+                        <div class="tasks" id="tasks_completed">
+                            @foreach($tasks as $t)
+                                @if((($t->submit * 1) == 1) && (($t->submit_accept * 1) == 0))
+                                    <div class="task-item task-warning task-complete cursor2">
+                                        <div class="task-text">
+                                            <p>{{$t->title}}</p>
+                                            {{$t->remark}}
+                                            @if($t->dependencies)
+                                                <br>
+                                                @foreach($t->dependencies as $td)
+                                                    <a href="{{route('task.comment', ['tid' => $td->id])}}"
+                                                       target="_blank"
+                                                       title="Task Comment">{{$td->title}}</a>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                        <div class="task-footer" tid="{{$t->id}}">
+                                            <div class="pull-left"><span
+                                                        class="fa fa-clock-o"></span> {{$t->updated_at}}
+                                            </div>
+                                            <div class="pull-right">
+                                                <a href="{{route('submit.report', ['tid' => $t->id])}}" target="_blank"
+                                                   title="Submit Report"><i
+                                                            class="glyphicon glyphicon-envelope"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @elseif(($t->submit_accept * 1) == 1)
+                                    <div class="task-item task-primary task-complete cursor">
+                                        <div class="duplicate-task-text">
+                                            <p>{{$t->title}}</p>
+                                            {{$t->remark}}
+                                            @if($t->dependencies)
+                                                <br>
+                                                @foreach($t->dependencies as $td)
+                                                    <a href="{{route('task.comment', ['tid' => $td->id])}}"
+                                                       target="_blank"
+                                                       title="Task Comment">{{$td->title}}</a>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                        <div class="task-footer">
+                                            <div class="pull-left">
+                                                <span class="text-primary"><b>Accepted</b></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                            <div class="task-drop">
+                                <span class="fa fa-cloud"></span>
+                                Drag your task here to finish it
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    No assigned task at the moment.
+                @endif
             </div>
         </div>
         <!-- END CONTENT FRAME BODY -->
