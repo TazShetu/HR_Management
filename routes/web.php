@@ -341,6 +341,12 @@ Route::get('/reply-edit/task/{rid}', 'ReplytController@edit')->name('replyt.edit
 Route::post('/reply-update/task/{rid}', 'ReplytController@update')->name('replyt.update');
 Route::get('/reply-delete/task/{rid}', 'ReplytController@destroy')->name('replyt.delete');
 
+Route::post('/user-loan', 'LoantypeController@userLoan')->name('user.loan');
+Route::get('/user-loan/{uid}', 'LoantypeController@userLoanDummy')->name('user.loan.dummy');
+Route::post('/user-loan/store/{uid}', 'LoantypeController@userLoanStore')->name('user.loan.store');
+Route::get('/user-loan/edit/{lid}', 'LoantypeController@userLoanEdit')->name('user.loan.edit.2');
+Route::post('/user-loan/update/{lid}', 'LoantypeController@userLoanUpdate')->name('user.loan.update.2');
+
 
 
 

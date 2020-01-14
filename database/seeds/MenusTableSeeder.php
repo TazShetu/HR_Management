@@ -46,7 +46,7 @@ class MenusTableSeeder extends Seeder
             35 => ['bonus', 'Bonus Setup', 'Bonus Setup menu under Payroll', 1],
             36 => ['provident_fund', 'Provident Fund', 'Provident Fund menu under Payroll', 1],
             37 => ['pension', 'Pension', 'Pension menu under Payroll', 1],
-            38 => ['loan', 'Loan Scheme', 'Loan Scheme menu under Payroll', 1],
+            38 => ['loan', 'Loan', 'Loan menu under Payroll', 1],
             39 => ['Communication', 'Communication', 'Communication', 0],
             40 => ['communication_global', 'Global', 'Global menu under Communication', 1],
             41 => ['communication_private', 'Private', 'Private menu under Communication', 1],
