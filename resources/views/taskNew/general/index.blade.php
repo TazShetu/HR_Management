@@ -292,8 +292,6 @@
                 }
             }).disableSelection();
         });
-    </script>
-    <script>
         $(function () {
             $("body").on("click", ".departments", function () {
                 $('.departments').removeClass('active');

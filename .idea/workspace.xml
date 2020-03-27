@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e72726-c4db-46b1-a7b4-128c721acd4e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/HR_Management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HR_Management.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KpisetupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KpisetupController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KpivoteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KpivoteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/kpi/setup/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/kpi/setup/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController2.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/taskNew/general/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/taskNew/general/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -372,7 +370,7 @@
       <workItem from="1581236639369" duration="1428000" />
       <workItem from="1585142252915" duration="857000" />
       <workItem from="1585196644387" duration="1198000" />
-      <workItem from="1585315082277" duration="2018000" />
+      <workItem from="1585315082277" duration="5065000" />
     </task>
     <servers />
   </component>
