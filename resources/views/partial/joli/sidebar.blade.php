@@ -2,7 +2,8 @@
 @php
     $Office = Storage::disk('local')->get('office');
     $OfficE = json_decode($Office);
-    $jobTitle = Storage::disk('local')->get('job_title');
+    $jobTitle = session('job_title'.Auth::id());
+    // $jobTitle = Storage::disk('local')->get('job_title');
     $menuU = Storage::disk('local')->get('menu');
     $menu = json_decode($menuU);
 @endphp
@@ -310,7 +311,11 @@
         @if((Auth::user()->branch_id * 1) != 0)
             <li class="xn-openable">
                 <a href="#"><span class="fa fa-thumbs-o-down"></span> <span
-                            class="xn-text"> {{$menu[42]->display_name}}</span></a>
+                            class="xn-text"> {{$menu[42]->display_name}}</span>
+                    @if(Auth::user()->complain > 0)
+                        <span class="badge badge-warning ml-1">{{Auth::user()->complain}}</span>
+                    @endif
+                </a>
                 <ul>
                     <li><a href="{{route('warning.create')}}"><i
                                     class="glyphicon glyphicon-minus"></i> {{$menu[43]->display_name}}</a></li>
@@ -319,7 +324,11 @@
                                     class="glyphicon glyphicon-minus"></i> {{$menu[44]->display_name}}</a></li>
                     @endpermission
                     <li><a href="{{route('appeal.create')}}"><i
-                                    class="glyphicon glyphicon-minus"></i> {{$menu[45]->display_name}}</a></li>
+                                    class="glyphicon glyphicon-minus"></i> {{$menu[45]->display_name}}
+                            @if(Auth::user()->complain > 0)
+                                <span class="badge badge-warning ml-1">{{Auth::user()->complain}}</span>
+                            @endif
+                        </a></li>
                     @permission('warningHR')
                     <li><a href="{{route('warning.showHR')}}"><i
                                     class="glyphicon glyphicon-minus"></i> {{$menu[46]->display_name}}</a></li>

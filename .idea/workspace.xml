@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d9e72726-c4db-46b1-a7b4-128c721acd4e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController2.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/taskNew/general/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/taskNew/general/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IncrementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IncrementController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WarningController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WarningController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/MenusTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/MenusTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/leave/application.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/leave/application.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/warning/appealCreate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/warning/appealCreate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/warning/warningViewDH.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/warning/warningViewDH.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -370,7 +377,8 @@
       <workItem from="1581236639369" duration="1428000" />
       <workItem from="1585142252915" duration="857000" />
       <workItem from="1585196644387" duration="1198000" />
-      <workItem from="1585315082277" duration="5065000" />
+      <workItem from="1585315082277" duration="9664000" />
+      <workItem from="1585367890181" duration="2363000" />
     </task>
     <servers />
   </component>
@@ -387,10 +395,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="646" y="236" width="627" height="568" key="find.popup" timestamp="1581236707434">
+    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585369647423">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="646" y="236" width="627" height="568" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581236707434" />
+    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585369647423" />
+    <state x="646" y="236" width="627" height="568" key="find.popup" timestamp="1585327698163">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="646" y="236" width="627" height="568" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585327698163" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -426,16 +438,6 @@
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Http/Controllers/WarningController.php</url>
-          <line>105</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Http/Controllers/WarningController.php</url>
-          <line>103</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/comment_global/reply.blade.php</url>
           <line>270</line>
           <option name="timeStamp" value="137" />
@@ -462,18 +464,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php</url>
-          <line>189</line>
+          <line>190</line>
           <option name="timeStamp" value="362" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/partial/joli/sidebar.blade.php</url>
-          <line>192</line>
+          <line>193</line>
           <option name="timeStamp" value="363" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/kpi/setup/index.blade.php</url>
           <line>38</line>
           <option name="timeStamp" value="364" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/warning/appealCreate.blade.php</url>
+          <line>82</line>
+          <option name="timeStamp" value="366" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/joli/js/demo_tasks.js</url>

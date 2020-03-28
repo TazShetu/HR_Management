@@ -30,6 +30,15 @@
 @section('pageTitle', 'Appeal')
 @section('content')
     <div class="row mb-5">
+        @if(session('Success'))
+            <div class="alert alert-success text-center">
+                {{session('Success')}}
+            </div>
+        @elseif(session('unsuccess'))
+            <div class="alert alert-danger text-center">
+                {{session('unsuccess')}}
+            </div>
+        @endif
         <div class="col-lg-10 offset-lg-1">
             <div class="panel panel-default">
                 <div class="panel-heading">

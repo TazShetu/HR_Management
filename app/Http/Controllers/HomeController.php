@@ -29,9 +29,11 @@ class HomeController extends Controller
         Storage::disk('local')->put('menu', Menu::all());
         Storage::disk('local')->put('office', Office::find(1));
         if (Auth::user()->job_id && Job::find(Auth::user()->job_id)) {
-            Storage::disk('local')->put('job_title', Job::find(Auth::user()->job_id)->title);
+            session(['job_title'.Auth::id() => Job::find(Auth::user()->job_id)->title]);
+//            Storage::disk('local')->put('job_title', Job::find(Auth::user()->job_id)->title);
         } else {
-            Storage::disk('local')->put('job_title', 'General User');
+            session(['job_title'.Auth::id() => 'General User']);
+//            Storage::disk('local')->put('job_title', 'General User');
         }
 
         return view('index');

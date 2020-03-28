@@ -104,8 +104,8 @@
                                                                     <span>
                                                                 <input type="number" name="days[]" class="leave-days"
                                                                        min="1"
-                                                                       max="{{$maxLeavePerType - $leave->accepted_days}}">
-                                                                Remaining {{$maxLeavePerType - $leave->accepted_days}} days
+                                                                       max="{{(($maxLeavePerType - $leave->accepted_days) >= 0) ? ($maxLeavePerType - $leave->accepted_days) : 0}}">
+                                                                Remaining {{(($maxLeavePerType - $leave->accepted_days) >= 0) ? ($maxLeavePerType - $leave->accepted_days) : 0}} days
                                                             </span>
                                                                     @php $x = 1; @endphp
                                                                     @break
@@ -152,7 +152,7 @@
                         </div>
                         <div class="panel-footer dn">
                             <a title="refresh" class="btn btn-default back" data-link="{{route('back')}}"><span
-                                        class="fa fa-refresh"></span></a>
+                                    class="fa fa-refresh"></span></a>
                             <button type="submit" class="btn btn-primary pull-right">Send</button>
                         </div>
                     </form>

@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->string('ip_address')->nullable();
             $table->integer('tag')->default(0)->index();
             $table->integer('kpiVoting')->default(0)->index();
+            $table->integer('complain')->default(0)->index();
             $table->rememberToken();
             $table->timestamps();
         });

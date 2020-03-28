@@ -50,7 +50,7 @@ class MenusTableSeeder extends Seeder
             39 => ['Communication', 'Communication', 'Communication', 0],
             40 => ['communication_global', 'Global', 'Global menu under Communication', 1],
             41 => ['communication_private', 'Private', 'Private menu under Communication', 1],
-            42 => ['Dispute_Management', 'Dispute Management', 'Dispute Management', 0],
+            42 => ['Dispute_Management', 'Dispute', 'Dispute Management', 0],
             43 => ['Dispute_Management_Complain', 'Complain', 'Complain menu under Dispute Management', 1],
             44 => ['warningDH', 'Department Head', 'Department Head menu under Dispute Management', 1],
             45 => ['Dispute_Management_Appeal', 'Appeal', 'Appeal menu under Dispute Management', 1],
