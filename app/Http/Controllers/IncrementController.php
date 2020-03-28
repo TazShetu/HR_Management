@@ -27,6 +27,7 @@ class IncrementController extends Controller
     public function index()
     {
         if (Auth::user()->can('increment')){
+            session(['job_title'.Auth::id() => Job::find(Auth::user()->job_id)->title]);
             $isetup = Incrementpolicy::find(1);
             $ksetup = Kpisetup::find(1);
             if (($isetup->is_kpi * 1) == 1){
@@ -217,10 +218,12 @@ class IncrementController extends Controller
                 DB::rollback();
             }
             if ($success) {
-                if (Auth::id() == $u->id){
-                    Storage::disk('local')->delete('job_title');
-                    Storage::disk('local')->put('job_title', Job::find(Auth::user()->job_id)->title);
-                }
+//                if (Auth::id() == $u->id){
+//                    session()->forget('job_title'.Auth::id());
+//                    Storage::disk('local')->delete('job_title');
+//                    session(['job_title'.Auth::id() => Job::find(Auth::user()->job_id)->title]);
+//                    Storage::disk('local')->put('job_title', Job::find(Auth::user()->job_id)->title);
+//                }
                 Session::flash('PromoteSuccess', "The Employee has been promoted successfully.");
                 return redirect()->back();
             } else {

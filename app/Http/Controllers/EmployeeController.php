@@ -24,12 +24,6 @@ class EmployeeController extends Controller
     }
 
 
-    public function index()
-    {
-        //
-    }
-
-
     public function create()
     {
         if (Auth::user()->can('employee_create')) {

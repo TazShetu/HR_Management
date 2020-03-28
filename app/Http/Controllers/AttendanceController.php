@@ -43,7 +43,7 @@ class AttendanceController extends Controller
         date_default_timezone_set('Asia/Dhaka');
         // Start Time should come from setup //////////////////////////////////////////////////////////////////////////////
         $setTime = strtotime(date('Y-m-d H:i:s', strtotime('22:30:00')));
-        if (strtotime(date('Y-m-d H:i:s')) <= $setTime) {
+//        if (strtotime(date('Y-m-d H:i:s')) <= $setTime) {
             $timeInExist = Attendance::where('user_id', Auth::id())->where('date', date('Y-m-d'))->first();
             if ($timeInExist) {
                 return redirect()->back()->with('error', 'Sorry! Duplicate Entry');
@@ -61,9 +61,9 @@ class AttendanceController extends Controller
                     return redirect()->back()->with('error', 'Unauthorized computer');
                 }
             }
-        } else {
-            return redirect()->back()->with('error', 'Can not enter time in after 12:30');
-        }
+//        } else {
+//            return redirect()->back()->with('error', 'Can not enter time in after 12:30');
+//        }
     }
 
 

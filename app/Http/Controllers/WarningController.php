@@ -60,16 +60,32 @@ class WarningController extends Controller
                 'name' => 'required',
                 'warningDescription' => 'required'
             ]);
-            $warning = new Warning();
-            $warning->branch_id = Auth::user()->branch_id;
-            $warning->disputer = Auth::id();
-            $warning->user_id = $request->name;
-            $warning->department_id = null;
-            $warning->description = $request->warningDescription;
-            $warning->approveDH = 1;
-            $warning->save();
-            Session::flash('ComplainSuccess', "Your Complain has been sent successfully.");
-            return redirect()->back();
+            DB::beginTransaction();
+            try {
+                $warning = new Warning();
+                $warning->branch_id = Auth::user()->branch_id;
+                $warning->disputer = Auth::id();
+                $warning->user_id = $request->name;
+                $warning->department_id = null;
+                $warning->description = $request->warningDescription;
+                $warning->approveDH = 1;
+                $warning->save();
+                $u = User::find($request->name);
+                $u->complain = $u->complain + 1;
+                $u->update();
+                DB::commit();
+                $success = true;
+            } catch (\Exception $e) {
+                $success = false;
+                DB::rollback();
+            }
+            if ($success) {
+                Session::flash('ComplainSuccess', "Your Complain has been sent successfully.");
+                return redirect()->back();
+            } else {
+                Session::flash('unsuccess', "Something went wrong :(");
+                return redirect()->back();
+            }
         } else {
             abort(403);
         }
@@ -89,10 +105,27 @@ class WarningController extends Controller
     public function warningForward($wid)
     {
         if (Auth::user()->can('warningDH')) {
-            $warning = Warning::find($wid);
-            $warning->approveDH = 1;
-            $warning->save();
-            return redirect()->back();
+            DB::beginTransaction();
+            try {
+                $warning = Warning::find($wid);
+                $warning->approveDH = 1;
+                $warning->save();
+                $u = User::find($warning->user_id);
+                $u->complain = $u->complain + 1;
+                $u->update();
+                DB::commit();
+                $success = true;
+            } catch (\Exception $e) {
+                $success = false;
+                DB::rollback();
+            }
+            if ($success) {
+                Session::flash('ComplainSuccess', "Your Complain has been forwarded successfully.");
+                return redirect()->back();
+            } else {
+                Session::flash('unsuccess', "Something went wrong :(");
+                return redirect()->back();
+            }
         } else {
             abort(403);
         }
@@ -113,10 +146,29 @@ class WarningController extends Controller
     public function appealStore(Request $request)
     {
         $request->validate(['appeal' => 'required']);
-        $warning = Warning::find($request->warning_id);
-        $warning->appeal = $request->appeal;
-        $warning->save();
-        return redirect()->back();
+        DB::beginTransaction();
+        try {
+            $warning = Warning::find($request->warning_id);
+            $warning->appeal = $request->appeal;
+            $warning->update();
+            $u = User::find($warning->user_id);
+            if (($u->complain * 1) > 0){
+                $u->complain = $u->complain - 1;
+                $u->update();
+            }
+            DB::commit();
+            $success = true;
+        } catch (\Exception $e) {
+            $success = false;
+            DB::rollback();
+        }
+        if ($success) {
+            Session::flash('Success', "Your appeal has been forwarded successfully.");
+            return redirect()->back();
+        } else {
+            Session::flash('unsuccess', "Something went wrong :(");
+            return redirect()->back();
+        }
     }
 
 

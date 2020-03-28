@@ -9,7 +9,7 @@ class PayscalesTableSeeder extends Seeder
     {
         App\Payscale::create([
             'title' => 'Pay Scale 1',
-            'pay' => 20000,
+            'pay' => 1,
             'compensation' => 1,
             'benefit' => 1,
             'benefit_detail' => 'Na',
@@ -18,7 +18,7 @@ class PayscalesTableSeeder extends Seeder
         ]);
         App\Payscale::create([
             'title' => 'Pay Scale 2',
-            'pay' => 15000,
+            'pay' => 1,
             'compensation' => 1,
             'benefit' => 1,
             'benefit_detail' => 'Na',
@@ -27,7 +27,7 @@ class PayscalesTableSeeder extends Seeder
         ]);
         App\Payscale::create([
             'title' => 'Pay Scale 3',
-            'pay' => 10000,
+            'pay' => 1,
             'compensation' => 1,
             'benefit' => 1,
             'benefit_detail' => 'Na',
