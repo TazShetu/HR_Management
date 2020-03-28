@@ -20,6 +20,10 @@
             <div class="alert alert-info text-center">
                 {{session('ComplainSuccess')}}
             </div>
+        @elseif(session('unsuccess'))
+            <div class="alert alert-danger text-center">
+                {{session('unsuccess')}}
+            </div>
         @endif
         <div class="col-lg-10 offset-lg-1">
             <div class="panel panel-default">
@@ -36,7 +40,8 @@
                                 <select class="form-control" name="name" required>
                                     <option selected disabled hidden value="">Choose...</option>
                                     @foreach($users as $u)
-                                        <option value="{{$u->id}}" {{(old('name')== $u->id)?'selected':'' }}>{{$u->name}}</option>
+                                        <option
+                                            value="{{$u->id}}" {{(old('name')== $u->id)?'selected':'' }}>{{$u->name}}</option>
                                     @endforeach
                                 </select>
                                 @if($errors->has('name'))
@@ -48,8 +53,8 @@
                             <label class="col-md-3 col-xs-12 control-label">Description</label>
                             <div class="col-md-6 col-xs-12">
                             <textarea
-                                    class="form-control {{$errors->has('warningDescription') ? 'is-invalid' : ''}}"
-                                    rows="5" name="warningDescription" required></textarea>
+                                class="form-control {{$errors->has('warningDescription') ? 'is-invalid' : ''}}"
+                                rows="5" name="warningDescription" required></textarea>
                                 <script>
                                     CKEDITOR.replace('warningDescription');
                                 </script>
@@ -61,7 +66,7 @@
                     </div>
                     <div class="panel-footer">
                         <a title="refresh" class="btn btn-default back" data-link="{{route('back')}}"><span
-                                    class="fa fa-refresh"></span></a>
+                                class="fa fa-refresh"></span></a>
                         <button class="btn btn-primary pull-right">Send</button>
                     </div>
                 </form>

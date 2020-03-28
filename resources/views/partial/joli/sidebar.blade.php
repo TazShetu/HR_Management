@@ -2,7 +2,8 @@
 @php
     $Office = Storage::disk('local')->get('office');
     $OfficE = json_decode($Office);
-    $jobTitle = Storage::disk('local')->get('job_title');
+    $jobTitle = session('job_title'.Auth::id());
+    // $jobTitle = Storage::disk('local')->get('job_title');
     $menuU = Storage::disk('local')->get('menu');
     $menu = json_decode($menuU);
 @endphp
@@ -57,8 +58,8 @@
                 </div>
                 @if((Auth::user()->branch_id * 1) != 0)
                     <div class="profile-controls">
-                        <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
-                        <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
+                        <a href="{{route('personal.info', ['uid' => Auth::id()])}}" class="profile-control-left"><span class="fa fa-info"></span></a>
+                        <a href="{{route('commentg')}}" class="profile-control-right"><span class="fa fa-envelope"></span></a>
                     </div>
                 @endif
             </div>
@@ -173,24 +174,24 @@
                                 class="glyphicon glyphicon-minus"></i> {{$menu[21]->display_name}}</a></li>
                 {{--Old Increment--}}
                 {{--Its Not Coming From $m--}}
-                <li class="xn-openable">
-                    <a href="#"><span class="fa fa-sitemap"></span> <span
-                                class="xn-text"> Increment Old</span></a>
-                    <ul>
-                        <li><a href="{{route('increment.persons.select')}}"><i class="glyphicon glyphicon-minus"></i>
-                                Department Head</a>
-                        </li>
-                        <li><a href="{{route('increment.show.hr')}}"><i class="glyphicon glyphicon-minus"></i> HR</a>
-                        </li>
-                        <li><a href="{{route('increment.show.ceo')}}"><i class="glyphicon glyphicon-minus"></i> CEO</a>
-                        </li>
-                    </ul>
-                </li>
+{{--                <li class="xn-openable">--}}
+{{--                    <a href="#"><span class="fa fa-sitemap"></span> <span--}}
+{{--                                class="xn-text"> Increment Old</span></a>--}}
+{{--                    <ul>--}}
+{{--                        <li><a href="{{route('increment.persons.select')}}"><i class="glyphicon glyphicon-minus"></i>--}}
+{{--                                Department Head</a>--}}
+{{--                        </li>--}}
+{{--                        <li><a href="{{route('increment.show.hr')}}"><i class="glyphicon glyphicon-minus"></i> HR</a>--}}
+{{--                        </li>--}}
+{{--                        <li><a href="{{route('increment.show.ceo')}}"><i class="glyphicon glyphicon-minus"></i> CEO</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
                 @endpermission
-                @permission('account_close')
-                <li><a href="{{route('account.close')}}"><i class="glyphicon glyphicon-minus"></i>
-                        [[{{$menu[22]->display_name}}]]</a></li>
-                @endpermission
+{{--                @permission('account_close')--}}
+{{--                <li><a href="{{route('account.close')}}"><i class="glyphicon glyphicon-minus"></i>--}}
+{{--                        [[{{$menu[22]->display_name}}]]</a></li>--}}
+{{--                @endpermission--}}
                 @permission('transfer')
                 <li class="xn-openable">
                     <a href="#"><span class="fa fa-sitemap"></span> <span
@@ -310,7 +311,11 @@
         @if((Auth::user()->branch_id * 1) != 0)
             <li class="xn-openable">
                 <a href="#"><span class="fa fa-thumbs-o-down"></span> <span
-                            class="xn-text"> {{$menu[42]->display_name}}</span></a>
+                            class="xn-text"> {{$menu[42]->display_name}}</span>
+                    @if(Auth::user()->complain > 0)
+                        <span class="badge badge-warning ml-1">{{Auth::user()->complain}}</span>
+                    @endif
+                </a>
                 <ul>
                     <li><a href="{{route('warning.create')}}"><i
                                     class="glyphicon glyphicon-minus"></i> {{$menu[43]->display_name}}</a></li>
@@ -319,14 +324,18 @@
                                     class="glyphicon glyphicon-minus"></i> {{$menu[44]->display_name}}</a></li>
                     @endpermission
                     <li><a href="{{route('appeal.create')}}"><i
-                                    class="glyphicon glyphicon-minus"></i> {{$menu[45]->display_name}}</a></li>
+                                    class="glyphicon glyphicon-minus"></i> {{$menu[45]->display_name}}
+                            @if(Auth::user()->complain > 0)
+                                <span class="badge badge-warning ml-1">{{Auth::user()->complain}}</span>
+                            @endif
+                        </a></li>
                     @permission('warningHR')
                     <li><a href="{{route('warning.showHR')}}"><i
                                     class="glyphicon glyphicon-minus"></i> {{$menu[46]->display_name}}</a></li>
                     @endpermission
                 </ul>
             </li>
-            @if((Auth::user()->kpiVoting * 1) == 1)
+            @if(((Auth::user()->kpiVoting * 1) == 1) && ((Auth::user()->branch_id * 1) != 0))
                 <li>
                     <a href="{{route('kpi.vote')}}"><span class="fa fa-tasks"></span> <span
                                 class="xn-text">{{$menu[47]->display_name}}</span></a>
@@ -359,32 +368,32 @@
                 </ul>
             </li>
         @endif
-        <li class="xn-title">Old</li>
-        <li class="xn-openable">
-            <a href="#"><span class="fa fa-info"></span> <span
-                        class="xn-text"> Info</span></a>
-            <ul>
-                <li><a href="{{route('userinfosearch')}}"><span
-                                class="fa fa-info"></span> User Info</a></li>
-                <li><a href="{{route('userJobInfoSearch')}}"><span
-                                class="fa fa-info"></span> User Job Info</a></li>
-                <li><a href="{{route('userPayInfoSearch')}}"><span
-                                class="fa fa-info"></span> [[User Pay Info]]</a></li>
-                <li><a href="{{route('userLoanInfoSearch')}}"><span
-                                class="fa fa-info"></span> User Loan Info</a></li>
-                <li><a href="{{route('user.search.role')}}"><span
-                                class="fa fa-info"></span> User Role</a></li>
-            </ul>
-        </li>
-        <li class="xn-openable">
-            <a href="#"><span class="glyphicon glyphicon-calendar"></span> <span
-                        class="xn-text"> Task Management</span></a>
-            <ul>
-                <li><a href="{{route('task.index')}}"><i class="glyphicon glyphicon-minus"></i> Project Manager</a></li>
-                <li><a href="{{route('task.index.employee')}}"><i class="glyphicon glyphicon-minus"></i> Employee</a>
-                </li>
-            </ul>
-        </li>
+{{--        <li class="xn-title">Old</li>--}}
+{{--        <li class="xn-openable">--}}
+{{--            <a href="#"><span class="fa fa-info"></span> <span--}}
+{{--                        class="xn-text"> Info</span></a>--}}
+{{--            <ul>--}}
+{{--                <li><a href="{{route('userinfosearch')}}"><span--}}
+{{--                                class="fa fa-info"></span> User Info</a></li>--}}
+{{--                <li><a href="{{route('userJobInfoSearch')}}"><span--}}
+{{--                                class="fa fa-info"></span> User Job Info</a></li>--}}
+{{--                <li><a href="{{route('userPayInfoSearch')}}"><span--}}
+{{--                                class="fa fa-info"></span> [[User Pay Info]]</a></li>--}}
+{{--                <li><a href="{{route('userLoanInfoSearch')}}"><span--}}
+{{--                                class="fa fa-info"></span> User Loan Info</a></li>--}}
+{{--                <li><a href="{{route('user.search.role')}}"><span--}}
+{{--                                class="fa fa-info"></span> User Role</a></li>--}}
+{{--            </ul>--}}
+{{--        </li>--}}
+{{--        <li class="xn-openable">--}}
+{{--            <a href="#"><span class="glyphicon glyphicon-calendar"></span> <span--}}
+{{--                        class="xn-text"> Task Management</span></a>--}}
+{{--            <ul>--}}
+{{--                <li><a href="{{route('task.index')}}"><i class="glyphicon glyphicon-minus"></i> Project Manager</a></li>--}}
+{{--                <li><a href="{{route('task.index.employee')}}"><i class="glyphicon glyphicon-minus"></i> Employee</a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </li>--}}
 
 
         {{--        <li class="xn-title">Navigation</li>--}}

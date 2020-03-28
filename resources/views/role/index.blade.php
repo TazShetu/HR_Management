@@ -79,51 +79,32 @@
                                 @if($errors->has('permission'))
                                     <span class="help-block text-danger">Please Select at least one permission.</span>
                                 @endif
-                                {{--                                    <label class="check">--}}
-                                {{--                                        <div class="icheckbox_minimal-grey" style="position: relative;">--}}
-                                {{--                                            <input type="checkbox" class="icheckbox" checked="checked" style="position: absolute; opacity: 0;">--}}
-                                {{--                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>--}}
-                                {{--                                        </div>--}}
-                                {{--                                        Checkbox title--}}
-                                {{--                                    </label>--}}
                                 @foreach($menus as $m)
-                                    @if($m->permission == 0)
-                                        <div class="form-check form-check-inline"
-                                             @if($m->level == 0)
-                                             style="margin-left: 10px;"
-                                             @elseif($m->level == 1)
-                                             style="margin-left: 40px;"
-                                             @elseif($m->level == 2)
-                                             style="margin-left: 70px;"
-                                             @elseif($m->level == 3)
-                                             style="margin-left: 100px;"
-                                             @elseif($m->level == 4)
-                                             style="margin-left: 130px;"
-                                                @endif
-                                        >
-                                            <input class="form-check-input" type="checkbox">
-                                            <label class="text-secondary">{{$m->display_name}}</label>
-                                        </div>
-                                        <br>
-                                    @elseif($m->permission == 1)
-                                        <div class="form-check form-check-inline"
-                                             @if($m->level == 0)
-                                             style="margin-left: 10px;"
-                                             @elseif($m->level == 1)
-                                             style="margin-left: 40px;"
-                                             @elseif($m->level == 2)
-                                             style="margin-left: 70px;"
-                                             @elseif($m->level == 3)
-                                             style="margin-left: 100px;"
-                                             @elseif($m->level == 4)
-                                             style="margin-left: 130px;"
-                                                @endif
-                                        >
-                                            <input class="form-check-input" type="checkbox" value="{{$m->id}}"
-                                                   name="permission[]">
-                                            <label>{{$m->display_name}}</label>
-                                        </div>
-                                        <br>
+                                    @if((($m->id * 1) != 25) && (($m->id * 1) != 26) && (($m->id * 1) != 32) && (($m->id * 1) != 44) && (($m->id * 1) != 46) && (($m->id * 1) != 48) && (($m->id * 1) != 50) && (($m->id * 1) != 51) && (($m->id * 1) != 54))
+                                        @if($m->permission == 0)
+                                            <div class="form-check form-check-inline d-block permission-0"
+                                                 @if($m->level == 0)
+                                                 style="margin-left: 10px;"
+                                                 @elseif($m->level == 1)
+                                                 style="margin-left: 40px;"
+                                                    @endif
+                                            >
+                                                <input class="form-check-input" type="checkbox" {{ (($m->id * 1) == 1) ? 'checked disabled' : '' }} id="{{$m->name}}">
+                                                <label class="text-secondary" for="{{$m->name}}">{{$m->display_name}}</label>
+                                            </div>
+                                        @elseif($m->permission == 1)
+                                            <div class="form-check form-check-inline d-block {{ ((($m->id * 1) != 17) && (($m->id * 1) != 49)) ? 'permission-1' : 'stopP' }}"
+                                                 @if($m->level == 0)
+                                                 style="margin-left: 10px;"
+                                                 @elseif($m->level == 1)
+                                                 style="margin-left: 40px;"
+                                                    @endif
+                                            >
+                                                <input class="form-check-input" type="checkbox" value="{{$m->id}}"
+                                                       name="permission[]" id="{{$m->name}}">
+                                                <label for="{{$m->name}}">{{$m->display_name}}</label>
+                                            </div>
+                                        @endif
                                     @endif
                                 @endforeach
                             </div>
@@ -177,14 +158,44 @@
 @endsection
 @section('script')
     <!-- START THIS PAGE PLUGINS-->
-    {{--    <script type='text/javascript' src='{{asset('joli/js/plugins/icheck/icheck.min.js')}}'></script>--}}
+    {{--    <script type='text/javascript' src="{{asset('joli/js/plugins/icheck/icheck.min.js')}}"></script>--}}
     {{--    <script type="text/javascript" src="{{asset('joli/js/demo_tables.js')}}"></script>--}}
-    {{--    <script type='text/javascript' src='{{asset('joli/js/plugins/icheck/icheck.min.js')}}'></script>--}}
+    {{--    <script type='text/javascript' src="{{asset('joli/js/plugins/icheck/icheck.min.js')}}"></script>--}}
     {{--    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-datepicker.js')}}"></script>--}}
     {{--    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-file-input.js')}}"></script>--}}
     {{--    <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap-select.js')}}"></script>--}}
     {{--    <script type="text/javascript" src="{{asset('joli/js/plugins/tagsinput/jquery.tagsinput.min.js')}}"></script>--}}
     <!-- END THIS PAGE PLUGINS-->
+    <script>
+        $(function () {
+            $('.form-check-input').click((e) => {
+                var target_div = $(e.target).closest('.form-check');
+                if (target_div.hasClass('permission-0')) {
+                    target_div = $(target_div).next();
+                    while (target_div.length > 0 && !target_div.hasClass('permission-0')) {
+                        if (!target_div.hasClass('stopP')) {
+                            target_div.find('input').prop("checked", e.target.checked);
+                        }
+                        target_div = target_div.next();
+                    }
+                } else if (target_div.hasClass('permission-1')) {
+                    var checkbox_arr = [e.target.checked];
+                    target_div = $(target_div).next();
+                    while (target_div.length > 0 && !target_div.hasClass('permission-0')) {
+                        checkbox_arr.push(target_div.find('input').is(':checked'));
+                        target_div = target_div.next();
+                    }
+                    var target_div = $(e.target).closest('.form-check').prev();
+                    while (target_div.length > 0 && !target_div.hasClass('permission-0')) {
+                        checkbox_arr.push(target_div.find('input').is(':checked'));
+                        target_div = target_div.prev();
+                    }
+                    var checked_arr = checkbox_arr.filter(x => x);
+                    target_div.find('input').prop("checked", checked_arr.length > 0);
+                }
+            });
+        });
+    </script>
 @endsection
 
 {{--@include('includes.bubbly.header')--}}

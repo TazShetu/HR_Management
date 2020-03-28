@@ -21,6 +21,7 @@ class JobsTableSeeder extends Seeder
             'maxLoanInPercentage' => 50,
             'provident' => 1,
         ]);
+        //3
         App\Job::create([
             'title' => 'HR (Grade I)',
             'supervisor_id' => 2,
@@ -28,20 +29,20 @@ class JobsTableSeeder extends Seeder
             'maxLoanInPercentage' => 50,
             'provident' => 1,
         ]);
-        App\Job::create([
-            'title' => 'HR (Grade II)',
-            'supervisor_id' => 3,
-            'payscale_id' => '1',
-            'maxLoanInPercentage' => 50,
-            'provident' => 1,
-        ]);
-        App\Job::create([
-            'title' => 'HR (Grade III)',
-            'supervisor_id' => 3,
-            'payscale_id' => '1',
-            'maxLoanInPercentage' => 50,
-            'provident' => 1,
-        ]);
+//        App\Job::create([
+//            'title' => 'HR (Grade II)',
+//            'supervisor_id' => 3,
+//            'payscale_id' => '1',
+//            'maxLoanInPercentage' => 50,
+//            'provident' => 1,
+//        ]);
+//        App\Job::create([
+//            'title' => 'HR (Grade III)',
+//            'supervisor_id' => 3,
+//            'payscale_id' => '1',
+//            'maxLoanInPercentage' => 50,
+//            'provident' => 1,
+//        ]);
         App\Job::create([
             'title' => 'Accountant (Grade I)',
             'supervisor_id' => 2,
@@ -56,6 +57,7 @@ class JobsTableSeeder extends Seeder
             'maxLoanInPercentage' => 50,
             'provident' => 1,
         ]);
+        //6
         App\Job::create([
             'title' => 'Project Manager (Grade I)',
             'supervisor_id' => 7,
@@ -63,6 +65,7 @@ class JobsTableSeeder extends Seeder
             'maxLoanInPercentage' => 50,
             'provident' => 1,
         ]);
+        //7
         App\Job::create([
             'title' => 'Senior Web Developer (Grade I)',
             'supervisor_id' => 8,
@@ -70,6 +73,7 @@ class JobsTableSeeder extends Seeder
             'maxLoanInPercentage' => 50,
             'provident' => 1,
         ]);
+        //8
         App\Job::create([
             'title' => 'Senior Web Developer (Grade II)',
             'supervisor_id' => 8,
@@ -77,6 +81,7 @@ class JobsTableSeeder extends Seeder
             'maxLoanInPercentage' => 50,
             'provident' => 1,
         ]);
+        //9
         App\Job::create([
             'title' => 'Web Developer (Grade I)',
             'supervisor_id' => 8,
@@ -84,6 +89,7 @@ class JobsTableSeeder extends Seeder
             'maxLoanInPercentage' => 50,
             'provident' => 1,
         ]);
+        //10
         App\Job::create([
             'title' => 'Web Developer (Grade II)',
             'supervisor_id' => 8,
@@ -91,6 +97,7 @@ class JobsTableSeeder extends Seeder
             'maxLoanInPercentage' => 50,
             'provident' => 1,
         ]);
+        //11
         App\Job::create([
             'title' => 'Jr. Web Developer (Grade I)',
             'supervisor_id' => 8,
@@ -98,6 +105,7 @@ class JobsTableSeeder extends Seeder
             'maxLoanInPercentage' => 50,
             'provident' => 1,
         ]);
+        //12
         App\Job::create([
             'title' => 'Jr. Web Developer (Grade II)',
             'supervisor_id' => 8,

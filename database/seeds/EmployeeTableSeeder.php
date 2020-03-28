@@ -1,46 +1,37 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
+use App\Employee;
 
 class EmployeeTableSeeder extends Seeder
 {
 
     public function run()
     {
-        App\Employee::create([
-            'user_id' => '3',
-            'employeeType_id' => '1',
-            'religion_id' => '1',
-            'dob' => '1990-10-10',
-            'FathersName' => 'Father One',
-            'MothersName' => 'Mother One',
-            'mobile' => '123456789',
-            'nationality' => 'Bangladeshi',
-            'about_me' => 'about me and ....',
-            'address' => 'Address One',
-            'education' => 'Education One',
-            'employment' => 'Employment One',
-            'skills' => 'Skills One',
-            'languages' => 'Language One',
-            'reference' => 'Reference One',
-        ]);
-        App\Employee::create([
-            'user_id' => '4',
-            'employeeType_id' => '1',
-            'religion_id' => '1',
-            'dob' => '1990-10-11',
-            'FathersName' => 'Father Two',
-            'MothersName' => 'Mother Two',
-            'mobile' => '123456789',
-            'nationality' => 'Bangladeshi',
-            'about_me' => 'about me and ....',
-            'address' => 'Address Two',
-            'education' => 'Education Two',
-            'employment' => 'Employment Two',
-            'skills' => 'Skills Two',
-            'languages' => 'Language Two',
-            'reference' => 'Reference Two',
-        ]);
+        $users = User::all();
+        foreach ($users as $i => $u){
+            if ($i > 1){
+                Employee::create([
+                    'user_id' => $u->id,
+                    'employeeType_id' => '1',
+                    'religion_id' => '1',
+                    'dob' => '1990-10-10',
+                    'FathersName' => 'NA',
+                    'MothersName' => 'NA',
+                    'mobile' => 'NA',
+                    'nationality' => 'Bangladeshi',
+                    'about_me' => 'NA',
+                    'address' => 'NA',
+                    'education' => 'NA',
+                    'employment' => 'NA',
+                    'skills' => 'NA',
+                    'languages' => 'NA',
+                    'reference' => 'NA',
+                ]);
+            }
+        }
+
         App\Incrementpolicy::create([
             'below' => '10',
             'increment_1' => '5',
